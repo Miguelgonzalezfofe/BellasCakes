@@ -1,4 +1,14 @@
 /* Styles header */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 800px;
+}
+
 header {
     width: 100%;
 
@@ -6,7 +16,7 @@ header {
     .content_header {
         // border: 1px solid;
         display: grid;
-        grid-template-columns: 48px 1fr 48px;
+        grid-template-columns: 58px 1fr 58px;
         // importante para el boton menu
         grid-template-rows: 170px;
 
@@ -19,9 +29,10 @@ header {
             .fa-cart-shopping {
                 font-size: 48px;
                 color: pink;
+                cursor: pointer;
             }
         }
-        
+
         .menu {
             display: flex;
             flex-direction: column;
@@ -31,29 +42,170 @@ header {
             .fa-bars {
                 font-size: 48px;
                 color: pink;
+                cursor: pointer;
             }
         }
-        .logo{
+
+        .logo {
             #logo_header {
                 width: 80%;
                 height: 100%;
-                // border: 1px solid;
             }
 
         }
     }
 
-    #buscador {
-        width: 95%;
-        height: 43px;
-        margin:auto auto auto auto;
+    .buscador_header {
+        border: 1px solid;
         border-radius: 20px;
+        display: grid;
+        grid-template-columns: 1fr 40px;
 
+
+        #buscador {
+            border: none;
+            width: 100%;
+            height: 43px;
+            border-radius: 20px 0 0 20px;
+        }
+
+        .fa-magnifying-glass {
+            font-size: 25px;
+            text-align: right;
+            margin: 10px;
+            cursor: pointer;
+        }
     }
 
+    nav {
+        margin-top: 10px;
+        height: 280px;
 
+        ul {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+
+            li {
+                width: 90%;
+                height: 44px;
+                list-style-type: none;
+                background: linear-gradient(#f2847c81, #F9DEDC);
+                border-radius: 10px;
+                transition: all .3s;
+
+                &:hover {
+                    scale: 1.1;
+                }
+
+                a {
+                    width: 100%;
+                    text-decoration: none;
+                    color: black;
+                    text-align: center;
+                    font-size: 24px;
+
+                }
+            }
+        }
+    }
+
+    .ingreso_registro {
+        height: 50px;
+        text-align: center;
+
+        width: 100%;
+        padding: 5px;
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        justify-content: center;
+        margin: auto;
+
+        .ingreso , .registro {
+            border: 1px solid;
+            width: 170px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 30px;
+
+        }
+        
+        .ingreso {
+            background-color: pink;
+
+        }
+    }
+
+    .redes_header{
+        height: 60px;
+        max-width: 600px;
+        margin: auto;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .fa-facebook, .fa-instagram, .fa-whatsapp{
+            font-size: 40px;
+            transition: all .1s;
+
+            &:hover{
+                scale: 1.1;
+            }
+        }
+        .fa-facebook{
+            color: blue;
+        }
+        .fa-instagram{
+            color: rgb(203, 23, 53);
+        }
+        .fa-whatsapp{
+            color: green;
+        }
+    }
 }
-.center{
+main{
+    .hero{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 290px;
+        height: 355px;
+        margin: auto 10px;
+        border-radius: 40px;
+
+        background-image: url("../media/img/IMG-20240603-WA0098-min.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+
+        .text_hero{
+            font-size: 32px;
+            height: 180px;
+            width: 90%;
+            margin: auto;
+
+            p{
+                padding: 5px;
+                text-align: center;
+            }
+        }
+        .btn_hero{
+            margin-bottom: 20px;
+            #btn_hero{
+                background-color: #F9DEDC;
+                width: 200px;
+                height: 45px;
+                border-radius: 40px;
+            }
+        }
+    }
+}
+
+.center {
     display: flex;
     flex-direction: row;
     justify-content: center;
