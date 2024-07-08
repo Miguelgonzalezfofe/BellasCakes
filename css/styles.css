@@ -65,32 +65,25 @@ header nav {
   margin-top: 10px;
   height: 280px;
 }
-header nav ul {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-header nav ul li {
+header nav li {
   width: 90%;
   height: 44px;
-  list-style-type: none;
   background: linear-gradient(rgba(242, 132, 124, 0.5058823529), #F9DEDC);
   border-radius: 10px;
   transition: all 0.3s;
 }
-header nav ul li:hover {
+header nav li:hover {
   scale: 1.1;
 }
-header nav ul li a {
+header nav li a {
   width: 100%;
   text-decoration: none;
   color: black;
   text-align: center;
   font-size: 24px;
 }
-header .ingreso_registro {
+
+.ingreso_registro {
   height: 50px;
   text-align: center;
   width: 100%;
@@ -101,42 +94,19 @@ header .ingreso_registro {
   justify-content: center;
   margin: auto;
 }
-header .ingreso_registro .ingreso, header .ingreso_registro .registro {
+.ingreso_registro .ingreso,
+.ingreso_registro .registro {
   border: 1px solid;
   width: 170px;
   border-radius: 10px;
   cursor: pointer;
   font-size: 30px;
 }
-header .ingreso_registro .ingreso {
+.ingreso_registro .ingreso {
   background-color: pink;
 }
-header .redes_header {
-  height: 60px;
-  max-width: 600px;
-  margin: auto;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-header .redes_header .fa-facebook, header .redes_header .fa-instagram, header .redes_header .fa-whatsapp {
-  font-size: 40px;
-  transition: all 0.1s;
-}
-header .redes_header .fa-facebook:hover, header .redes_header .fa-instagram:hover, header .redes_header .fa-whatsapp:hover {
-  scale: 1.1;
-}
-header .redes_header .fa-facebook {
-  color: blue;
-}
-header .redes_header .fa-instagram {
-  color: rgb(203, 23, 53);
-}
-header .redes_header .fa-whatsapp {
-  color: green;
-}
 
-main .hero {
+body main .hero {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -149,24 +119,37 @@ main .hero {
   background-repeat: no-repeat;
   background-position: center;
 }
-main .hero .text_hero {
+body main .hero .text_hero {
   font-size: 32px;
   height: 180px;
   width: 90%;
   margin: auto;
 }
-main .hero .text_hero p {
+body main .hero .text_hero p {
   padding: 5px;
   text-align: center;
 }
-main .hero .btn_hero {
+body main .hero .btn_hero {
   margin-bottom: 20px;
 }
-main .hero .btn_hero #btn_hero {
+body main .hero .btn_hero #btn_hero {
   background-color: #F9DEDC;
   width: 200px;
   height: 45px;
   border-radius: 40px;
+  cursor: pointer;
+}
+body footer {
+  background-color: #eee;
+  padding: 10px;
+}
+body footer .title_footer {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+a {
+  text-decoration: none;
 }
 
 .center {
@@ -174,6 +157,45 @@ main .hero .btn_hero #btn_hero {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.redes_sociales {
+  height: 60px;
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.redes_sociales .fa-facebook,
+.redes_sociales .fa-instagram,
+.redes_sociales .fa-whatsapp {
+  font-size: 40px;
+  transition: all 0.1s;
+}
+.redes_sociales .fa-facebook:hover,
+.redes_sociales .fa-instagram:hover,
+.redes_sociales .fa-whatsapp:hover {
+  scale: 1.1;
+}
+.redes_sociales .fa-facebook {
+  color: blue;
+}
+.redes_sociales .fa-instagram {
+  color: rgb(203, 23, 53);
+}
+.redes_sociales .fa-whatsapp {
+  color: green;
+}
+
+.list_nav {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style-type: none;
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=styles.css.map */
