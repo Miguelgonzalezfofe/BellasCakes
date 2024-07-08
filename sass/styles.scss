@@ -81,56 +81,56 @@ header {
         margin-top: 10px;
         height: 280px;
 
-            li {
-                width: 90%;
-                height: 44px;
-                background: linear-gradient(#f2847c81, #F9DEDC);
-                border-radius: 10px;
-                transition: all .3s;
+        li {
+            width: 90%;
+            height: 44px;
+            background: linear-gradient(#f2847c81, #F9DEDC);
+            border-radius: 10px;
+            transition: all .3s;
 
-                &:hover {
-                    scale: 1.1;
-                }
+            &:hover {
+                scale: 1.1;
+            }
 
-                a {
-                    width: 100%;
-                    text-decoration: none;
-                    color: black;
-                    text-align: center;
-                    font-size: 24px;
+            a {
+                width: 100%;
+                text-decoration: none;
+                color: black;
+                text-align: center;
+                font-size: 24px;
 
-                }
             }
         }
     }
+}
 
-    .ingreso_registro {
-        height: 50px;
-        text-align: center;
+.ingreso_registro {
+    height: 50px;
+    text-align: center;
 
-        width: 100%;
-        padding: 5px;
-        display: flex;
-        flex-direction: row;
-        gap: 5px;
-        justify-content: center;
-        margin: auto;
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+    margin: auto;
 
-        .ingreso,
-        .registro {
-            border: 1px solid;
-            width: 170px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 30px;
+    .ingreso,
+    .registro {
+        border: 1px solid;
+        width: 170px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 30px;
 
-        }
-
-        .ingreso {
-            background-color: pink;
-
-        }
     }
+
+    .ingreso {
+        background-color: pink;
+
+    }
+}
 
 
 body {
@@ -178,25 +178,71 @@ body {
         }
     }
 
+    .content_productos{
+        display: grid;
+        gap: 5px;
+        grid-template-columns: repeat(auto-fit,minmax(165px,1fr));
+        padding: 6px;
+
+        .producto{
+            
+            overflow: hidden;
+            max-width: 170px;   
+            height: 185px;
+            border-radius: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 2px 4px 5px #00000061;
+            transition: all 0.5s;
+            margin: auto;
+
+            &:hover{
+                scale: 1.04  ;
+            }
+            
+            .img_producto{
+                width: 100%;
+                height: 128px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .info_producto{
+                padding: 2px;
+                .nombre{
+                    color: pink;
+                }
+                .precio{
+                    color: red;
+                }
+            }
+
+        }
+    }
+
+
     footer {
         background-color: #eee;
         padding: 10px;
 
-        .title_footer{
+        .title_footer {
             font-size: 26px;
             font-weight: 600;
             margin-bottom: 10px;
         }
-        .nav_footer{
-            
-        }
+
+        .nav_footer {}
 
     }
 }
 
-a{
+a {
     text-decoration: none;
 }
+
 .center {
     display: flex;
     flex-direction: row;
@@ -204,7 +250,7 @@ a{
     align-items: center;
 }
 
-.redes_sociales{
+.redes_sociales {
     height: 60px;
     max-width: 600px;
     margin: auto;
@@ -235,6 +281,7 @@ a{
         color: green;
     }
 }
+
 .list_nav {
     height: 100%;
     display: flex;
@@ -243,4 +290,11 @@ a{
     align-items: center;
     list-style-type: none;
     font-size: 20px;
+}
+
+.title_section {
+    background: linear-gradient(#f2847c81, #F9DEDC);
+    width: 95%;
+    border-radius: 20px;
+    margin: 10px auto;
 }
