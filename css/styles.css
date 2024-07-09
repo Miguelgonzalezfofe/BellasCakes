@@ -139,13 +139,13 @@ body main .hero .btn_hero #btn_hero {
   border-radius: 40px;
   cursor: pointer;
 }
-body .content_productos {
+body main .destacados .content_productos {
   display: grid;
-  gap: 5px;
+  gap: 15px;
   grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
   padding: 6px;
 }
-body .content_productos .producto {
+body main .destacados .content_productos .producto {
   overflow: hidden;
   max-width: 170px;
   height: 185px;
@@ -158,25 +158,89 @@ body .content_productos .producto {
   transition: all 0.5s;
   margin: auto;
 }
-body .content_productos .producto:hover {
+body main .destacados .content_productos .producto:hover {
   scale: 1.04;
 }
-body .content_productos .producto .img_producto {
+body main .destacados .content_productos .producto .img_producto {
   width: 100%;
   height: 128px;
 }
-body .content_productos .producto .img_producto img {
+body main .destacados .content_productos .producto .img_producto img {
   width: 100%;
   height: 100%;
 }
-body .content_productos .producto .info_producto {
+body main .destacados .content_productos .producto .info_producto {
   padding: 2px;
 }
-body .content_productos .producto .info_producto .nombre {
+body main .destacados .content_productos .producto .info_producto .nombre {
   color: pink;
 }
-body .content_productos .producto .info_producto .precio {
+body main .destacados .content_productos .producto .info_producto .precio {
   color: red;
+}
+body main .eventos_especiales {
+  margin: 10px 0;
+}
+body main .eventos_especiales .content_evento {
+  width: 300px;
+  height: 280px;
+  border-radius: 20px;
+  margin: auto;
+  overflow: hidden;
+  background-color: #F9DEDC;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body main .eventos_especiales .content_evento .img_evento {
+  height: 67%;
+}
+body main .eventos_especiales .content_evento .img_evento img {
+  width: 100%;
+  height: 100%;
+}
+body main .eventos_especiales .content_evento .content_arrow_info {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+body main .eventos_especiales .content_evento .content_arrow_info .fa-arrow-left, body main .eventos_especiales .content_evento .content_arrow_info .fa-arrow-right {
+  font-size: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+body main .eventos_especiales .content_evento .content_arrow_info .fa-arrow-left:hover, body main .eventos_especiales .content_evento .content_arrow_info .fa-arrow-right:hover {
+  scale: 1.2;
+}
+body main .eventos_especiales .content_evento .content_arrow_info .info_evento .nombre_evento {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+body main .eventos_especiales .content_evento .content_arrow_info .info_evento .btn_consultar_evento {
+  width: 195px;
+  height: 30px;
+  border-radius: 40px;
+  border: none;
+  color: white;
+  background-color: #EB7777;
+  box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.448);
+  cursor: pointer;
+}
+body main .galeria_img .galeria {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+}
+body main .galeria_img .galeria img {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 1px 2px 5px;
+  margin: auto;
 }
 body footer {
   background-color: #eee;
@@ -189,11 +253,19 @@ body footer .title_footer {
 }
 a {
   text-decoration: none;
+  color: black;
 }
 
 .center {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.center_colum {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -242,6 +314,7 @@ a {
   width: 95%;
   border-radius: 20px;
   margin: 10px auto;
+  text-align: center;
 }
 
 /*# sourceMappingURL=styles.css.map */
