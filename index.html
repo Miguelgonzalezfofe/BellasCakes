@@ -18,8 +18,8 @@
 
 <body>
 
-    <header>
-        <div class="content_header">
+    <header class=" header">
+        <div class="content_header " >
             <div class="car">
                 <i class="fa-solid fa-cart-shopping"></i>
             </div>
@@ -27,7 +27,7 @@
                 <img id="logo_header" src="media/img/logo.jpg" alt="Logo Bellas Cakes">
             </div>
             <div class="menu">
-                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-bars" onclick="toogleHeader()"></i>
             </div>
         </div>
         <div class="buscador_header center">
@@ -140,18 +140,18 @@
             <h3 class="title_section">Eventos Especiales</h3>
             <article class="content_evento">
                 <div class="img_evento">
-                    <img src="media/img/Buttercream_cakes.jpg" alt="">
+                    <img class="img_scr" src="" alt="">
                 </div>
                 <div class="content_arrow_info">
                     <div class="anterior">
-                        <i id="btn_anterior_evento_especiales" class="fa-solid fa-arrow-left" ></i>
+                        <i id="btn_anterior_evento_especiales" class="fa-solid fa-arrow-left" onclick="anterior()"></i>
                     </div>
                     <div class="info_evento center_colum">
-                        <p class="nombre_evento">Boda</p>
+                        <p class="nombre_evento"></p>
                         <button class="btn_consultar_evento">Consultar</button>
                     </div>
                     <div class="siguiente">
-                        <i id="btn_siguiente_evento_especiales" class="fa-solid fa-arrow-right" ></i>
+                        <i id="btn_siguiente_evento_especiales" class="fa-solid fa-arrow-right" onclick="siguiente()" ></i>
                     </div>
                 </div>
             </article>
@@ -212,6 +212,7 @@
         </div>
         
     </footer>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

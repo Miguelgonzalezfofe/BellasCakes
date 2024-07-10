@@ -10,14 +10,11 @@ html {
 }
 
 header {
-    width: 100%;
-
-    // height: 160px;
+    height: 169px;
+    overflow: hidden;
     .content_header {
-        // border: 1px solid;
         display: grid;
         grid-template-columns: 58px 1fr 58px;
-        // importante para el boton menu
         grid-template-rows: 170px;
 
         .car {
@@ -323,6 +320,10 @@ body {
     }
 }
 
+.toogle_header{
+    height: 100%;
+
+}
 a {
     text-decoration: none;
     color: black;

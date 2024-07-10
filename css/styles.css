@@ -10,7 +10,8 @@ html {
 }
 
 header {
-  width: 100%;
+  height: 169px;
+  overflow: hidden;
 }
 header .content_header {
   display: grid;
@@ -251,6 +252,10 @@ body footer .title_footer {
   font-weight: 600;
   margin-bottom: 10px;
 }
+.toogle_header {
+  height: 100%;
+}
+
 a {
   text-decoration: none;
   color: black;
