@@ -404,6 +404,66 @@ body main .preguntas_frecuentes .pregunta_frecuente .resp_pregunta {
 body main .preguntas_frecuentes .toggle_pregunta {
   height: 100%;
 }
+body main .ingreso_usuario,
+body main .registro_usuario {
+  width: 100%;
+  height: 400px;
+  padding: 10px;
+}
+body main .ingreso_usuario .ingreso,
+body main .ingreso_usuario .registro,
+body main .registro_usuario .ingreso,
+body main .registro_usuario .registro {
+  border-radius: 20px;
+  box-shadow: -2px 2px 9px #969595;
+  width: 100%;
+  max-width: 400px;
+  min-width: 280px;
+  height: auto;
+  padding: 10px;
+  margin: 10px auto;
+}
+body main .ingreso_usuario .ingreso form label,
+body main .ingreso_usuario .registro form label,
+body main .registro_usuario .ingreso form label,
+body main .registro_usuario .registro form label {
+  display: inline-block;
+}
+body main .ingreso_usuario .ingreso form input,
+body main .ingreso_usuario .registro form input,
+body main .registro_usuario .ingreso form input,
+body main .registro_usuario .registro form input {
+  width: 100%;
+  height: 25px;
+  border: 1px solid #969595;
+  border-radius: 10px;
+  padding-left: 5px;
+}
+body main .ingreso_usuario .ingreso form input[type=checkbox],
+body main .ingreso_usuario .registro form input[type=checkbox],
+body main .registro_usuario .ingreso form input[type=checkbox],
+body main .registro_usuario .registro form input[type=checkbox] {
+  width: 14px;
+  display: inline-block;
+}
+body main .ingreso_usuario .ingreso form .btn_registro,
+body main .ingreso_usuario .registro form .btn_registro,
+body main .registro_usuario .ingreso form .btn_registro,
+body main .registro_usuario .registro form .btn_registro {
+  width: 100%;
+  margin: 5px 0;
+}
+body main .ingreso_usuario .ingreso form .btn_registro button,
+body main .ingreso_usuario .registro form .btn_registro button,
+body main .registro_usuario .ingreso form .btn_registro button,
+body main .registro_usuario .registro form .btn_registro button {
+  width: 100%;
+  height: 30px;
+  border-radius: 20px;
+  border: 1px solid #969595;
+  box-shadow: 2px 4px 5px #969595;
+  background-color: pink;
+}
 body footer {
   background-color: #eee;
   padding: 10px;
@@ -428,6 +488,8 @@ a {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  justify-content: baseline;
+  gap: 10px;
 }
 
 .center_colum {
