@@ -382,6 +382,7 @@ body main .preguntas_frecuentes .pregunta_frecuente {
   min-width: 260px;
   height: 33px;
   overflow: hidden;
+  margin: 8px auto;
 }
 body main .preguntas_frecuentes .pregunta_frecuente .pregunta {
   padding: 5px;
@@ -412,6 +413,7 @@ body footer .title_footer {
   font-weight: 600;
   margin-bottom: 10px;
 }
+
 .toggle_header {
   height: 100%;
 }

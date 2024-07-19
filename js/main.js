@@ -1,21 +1,28 @@
 
 // Despliegue del menu  
-const toogleHeader= ()=>{
+const toogleHeader = () => {
     let header = document.querySelector(".header")
     header.classList.toggle("toggle_header")
 }
+
+
 // Despliegue Preguntas Frecuentes
-const togglePreguntas =()=>{
-    let preguntas = document.querySelectorAll("#preguntas")
-    console.log(preguntas)
-    preguntas.classList.toggle("toggle_pregunta")
-    console.log("si funciona el btn")
-}
-// Manejo del Dom -- Eventos
+let btns_preguntas = document.querySelectorAll("#preguntas")
+
+// recorrer btns
+btns_preguntas.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+        const box = e.currentTarget
+        box.classList.toggle("toggle_pregunta")
+    })
+})
+
+
+
 let baseDatosEventos = [
     {
         nombre: "Boda",
-        img: "../media/img/Combo_mesa_dulce_mixto(pequeño).jpg",    
+        img: "../media/img/Combo_mesa_dulce_mixto(pequeño).jpg",
     },
     {
         nombre: "Bautizos",
@@ -24,54 +31,58 @@ let baseDatosEventos = [
     {
         nombre: "Cumpleaños",
         img: "../media/img/IMG-20240603-WA0004-min.jpg"
-    }    
+    }
 ]
 
+// cargar evento
+window.addEventListener("DOMContentLoaded", function () {
+    cargarEvento()
+})
+
+// cargar eventos
 // variables del evento
-let img = document.querySelector(".img_scr");
+let img = document.querySelector(".img_src");
 let nombre = document.querySelector(".nombre_evento")
 
 // iterador
 let turno = 0;
-// cargar evento
-window.addEventListener("DOMContentLoaded",function(){
-    cargarEvento()
-})
 
-// funcion para cargar evento
-const cargarEvento = ()=>{
-    let evento = baseDatosEventos[turno]
-    img.src = evento.img;
-    nombre.textContent = evento.nombre
+const cargarEvento = () => {
+    if (img == null && nombre == null) {
+
+    } else {
+
+        let evento = baseDatosEventos[turno]
+        img.src = evento.img;
+        nombre.textContent = evento.nombre
+    }
 }
 // Siguiente evento
-let siguiente = ()=>{
-    turno ++
-    if(turno > baseDatosEventos.length -1){
+let siguiente = () => {
+    turno++
+    if (turno > baseDatosEventos.length - 1) {
         turno = 0
     }
     cargarEvento()
 }
 // anteriro evento
-let anterior = ()=>{
+let anterior = () => {
     turno--
-    if(turno < baseDatosEventos.length -1){
-        turno = baseDatosEventos.length -1
+    if (turno < baseDatosEventos.length - 1) {
+        turno = baseDatosEventos.length - 1
     }
     cargarEvento()
 }
 
 let content_productos = document.querySelector("#content_productos")
-console.log(content_productos)
-const cargarCatalogo = ()=>{
+const cargarCatalogo = () => {
     fetch("/Base_de_datos.json")
-    .then(Response => Response.json())
-    .then(Data =>{
-        let catalogo = Data.producto
-        catalogo.forEach(e=>{
-            let producto = document.createElement("a")
-            producto.href="../index.html"
-            producto.innerHTML = `
+        .then(Response => Response.json())
+        .then(Data => {
+            catalogo.forEach(e => {
+                let producto = document.createElement("a")
+                producto.href = "../index.html"
+                producto.innerHTML = `
                     <div class="producto">
                         <div class="img_producto">
                             <img src="../${e.img}" alt="">
@@ -82,20 +93,16 @@ const cargarCatalogo = ()=>{
                         </div>
                     </div>
             `
-            content_productos.appendChild(producto)
+                content_productos.appendChild(producto)
+            })
         })
-    })
 }
 
-// cargarCatalogo()
 
 
-function url (rul){
+function url(rul) {
     fetch(rul)
-    .then(Response => Response.json())
-    .then(Data=>[
-        console.log(Data)
-    ])
+        .then(Response => Response.json())
+        .then(Data => [
+        ])
 }
-
-console.log(rul("../Base_de_datos.json"))

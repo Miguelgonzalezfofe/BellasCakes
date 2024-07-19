@@ -462,6 +462,7 @@ body {
                 min-width: 260px;
                 height: 33px;
                 overflow: hidden;
+                margin: 8px auto;
 
                 .pregunta{
                     padding: 5px;
@@ -469,7 +470,7 @@ body {
                     flex-direction: row;
                     align-items: center;
                     justify-content: space-between;
-                    
+
                     h4 {
                         font-weight: 600;
                     }
@@ -503,7 +504,7 @@ body {
             margin-bottom: 10px;
         }
 
-        .nav_footer {}
+        // .nav_footer {}
 
     }
 }
