@@ -17,11 +17,10 @@
 </head>
 
 <body>
-
     <header class=" header">
-        <div class="content_header " >
+        <div class="content_header ">
             <div class="car">
-                <i class="fa-solid fa-cart-shopping"></i>
+                <i class="fa-solid fa-cart-shopping" onclick="toggleCarrito()"></i>
             </div>
             <div class="logo center">
                 <img id="logo_header" src="media/img/logo.jpg" alt="Logo Bellas Cakes">
@@ -34,7 +33,7 @@
             <input id="buscador" type="text">
             <i class="fa-solid fa-magnifying-glass"></i>
         </div>
-        
+
         <nav>
             <ul class="list_nav">
                 <li class="center"><a href="index.html">Inicio</a></li>
@@ -53,15 +52,84 @@
             </div>
         </div>
         <div class="redes_sociales">
-            <a href="https://www.facebook.com/p/Bellas-Cakes-100083466205792/?_rdr"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.facebook.com/p/Bellas-Cakes-100083466205792/?_rdr"><i
+                    class="fa-brands fa-facebook"></i></a>
             <a href="https://www.instagram.com/bellascakespasteleria/"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://api.whatsapp.com/send?phone=+5491163716963&text=Hola%20me%20gustaría%20saber%20más%20sobre%20tus%20productos" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://api.whatsapp.com/send?phone=+5491163716963&text=Hola%20me%20gustaría%20saber%20más%20sobre%20tus%20productos"
+                target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
     </header>
 
+
     <main>
+        <div class="container_carrito">
+            <section class="content_carrito">
+                <div class="head_cart">
+                    <button onclick="toggleCarrito()">x</button>
+                    <h3>carrito de compras</h3>
+                </div>
+                <div id="carrito" class="carrito">
+                    <!-- <div class="producto">
+                        <div class="content_img">
+                            <img src="media/img/IMG-20240603-WA0020-min.jpg" alt="">
+                        </div>
+                        <div class="info_producto">
+                            <p class="name">nombre</p>
+                            <div class="und_precio">
+                                <div class="und">
+                                    <label for="unidad">und</label>
+                                    <input type="number">
+                                </div>
+                                <div class="precio">
+                                    <p class="precio">Precio</p>
+                                    <button>x</button>
+                                </div>
+                            </div>
+                            <div class="detalles_pedido">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus
+                            </div>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="content_img">
+                            <img src="media/img/IMG-20240603-WA0020-min.jpg" alt="">
+                        </div>
+                        <div class="info_producto">
+                            <p class="name">nombre</p>
+                            <div class="und_precio">
+                                <div class="und">
+                                    <label for="unidad">und</label>
+                                    <input type="number">
+                                </div>
+                                <div class="precio">
+                                    <p class="precio">Precio</p>
+                                    <button>x</button>
+                                </div>
+                            </div>
+                            <div class="detalles_pedido">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="footer_carrito">
+                    <div id="totalCarrito">
+                        <p>Total</p>
+                        <p class="total">$</p>
+                    </div>
+                    <div class="btn_carrito">
+
+                        <button>Realizar Pedido</button>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+        <div class="container_usuario"></div>
         <section class="hero">
-            <div class="text_hero">
+            <div class="text_hero" >
                 <p>Sabores que cautivan, aromas que seducen¡Descubre un mundo de tentaciones!</p>
             </div>
             <div class="btn_hero ">
@@ -69,7 +137,7 @@
             </div>
         </section>
         <section class="destacados">
-            <h3 class=" title_section" >Destacados</h3>
+            <h3 class=" title_section">Destacados</h3>
             <div class="content_productos">
                 <a href="index.html">
                     <div class="producto">
@@ -126,18 +194,18 @@
                         </div>
                     </div>
                 </a>
-                    <a href="index.html">
-                        <div class="producto">
-                            <div class="img_producto">
-                                <img src="media/img/Buttercream_cakes.jpg" alt="">
-                            </div>
-                            <div class="info_producto">
-                                <p class="nombre">Nombre</p>
-                                <p class="precio">Precio</p>
-                            </div>
+                <a href="index.html">
+                    <div class="producto">
+                        <div class="img_producto">
+                            <img src="media/img/Buttercream_cakes.jpg" alt="">
                         </div>
-                    </a>
-                
+                        <div class="info_producto">
+                            <p class="nombre">Nombre</p>
+                            <p class="precio">Precio</p>
+                        </div>
+                    </div>
+                </a>
+
             </div>
         </section>
         <section class="eventos_especiales">
@@ -155,7 +223,8 @@
                         <button class="btn_consultar_evento">Consultar</button>
                     </div>
                     <div class="siguiente">
-                        <i id="btn_siguiente_evento_especiales" class="fa-solid fa-arrow-right" onclick="siguiente()" ></i>
+                        <i id="btn_siguiente_evento_especiales" class="fa-solid fa-arrow-right"
+                            onclick="siguiente()"></i>
                     </div>
                 </div>
             </article>
@@ -214,7 +283,7 @@
             <p class="center">Copyright: ©Bellas Cakes</p>
             <p class="center">Creado por : Miguel Gonzalez</p>
         </div>
-        
+
     </footer>
     <script src="js/main.js"></script>
 </body>

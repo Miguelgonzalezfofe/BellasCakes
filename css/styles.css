@@ -83,8 +83,7 @@ header nav li a {
   text-align: center;
   font-size: 24px;
 }
-
-.ingreso_registro {
+header .ingreso_registro {
   height: 50px;
   text-align: center;
   width: 100%;
@@ -95,18 +94,43 @@ header nav li a {
   justify-content: center;
   margin: auto;
 }
-.ingreso_registro .ingreso,
-.ingreso_registro .registro {
+header .ingreso_registro .ingreso,
+header .ingreso_registro .registro {
   border: 1px solid;
   width: 170px;
   border-radius: 10px;
   cursor: pointer;
   font-size: 30px;
 }
-.ingreso_registro .ingreso {
+header .ingreso_registro .ingreso {
   background-color: pink;
 }
 
+body main .container_usuario {
+  width: 100%;
+  max-width: 400px;
+  min-width: 280px;
+  margin: auto;
+}
+body main .container_usuario .usuario {
+  margin: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body main .container_usuario .usuario .img {
+  width: 60px;
+}
+body main .container_usuario .usuario .img img {
+  width: 100%;
+  border-radius: 50%;
+}
+body main .container_usuario .usuario .nombre {
+  font-size: 20px;
+  text-align: center;
+}
 body main .hero {
   display: flex;
   flex-direction: column;
@@ -115,7 +139,7 @@ body main .hero {
   height: 355px;
   margin: auto 10px;
   border-radius: 40px;
-  background-image: url("../media/img/IMG-20240603-WA0098-min.jpg");
+  background-image: url("../media/img/shots_surtido.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -407,7 +431,7 @@ body main .preguntas_frecuentes .toggle_pregunta {
 body main .ingreso_usuario,
 body main .registro_usuario {
   width: 100%;
-  height: 400px;
+  height: auto;
   padding: 10px;
 }
 body main .ingreso_usuario .ingreso,
@@ -446,6 +470,14 @@ body main .registro_usuario .registro form input[type=checkbox] {
   width: 14px;
   display: inline-block;
 }
+body main .ingreso_usuario .ingreso form p,
+body main .ingreso_usuario .registro form p,
+body main .registro_usuario .ingreso form p,
+body main .registro_usuario .registro form p {
+  font-size: 10px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
 body main .ingreso_usuario .ingreso form .btn_registro,
 body main .ingreso_usuario .registro form .btn_registro,
 body main .registro_usuario .ingreso form .btn_registro,
@@ -464,11 +496,99 @@ body main .registro_usuario .registro form .btn_registro button {
   box-shadow: 2px 4px 5px #969595;
   background-color: pink;
 }
-body footer {
+
+.container_carrito {
+  position: absolute;
+  top: 0;
+  display: none;
+}
+.container_carrito .content_carrito {
+  position: sticky;
+  min-width: 300px;
+  height: 100vh;
+  background-color: #EB7777;
+  top: 0;
+  padding: 5px;
+  overflow-y: auto;
+}
+.container_carrito .content_carrito .head_cart {
+  position: relative;
+  text-align: center;
+  height: 50px;
+  padding: 10px;
+}
+.container_carrito .content_carrito .head_cart button {
+  position: absolute;
+  right: 0;
+}
+.container_carrito .content_carrito .carrito .producto {
+  display: flex;
+  flex-direction: row;
+}
+.container_carrito .content_carrito .carrito .producto .content_img {
+  max-width: 90px;
+}
+.container_carrito .content_carrito .carrito .producto .content_img img {
+  width: 100%;
+  border-radius: 10px;
+}
+.container_carrito .content_carrito .carrito .producto .info_producto {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+.container_carrito .content_carrito .carrito .producto .info_producto .name {
+  font-size: 20px;
+}
+.container_carrito .content_carrito .carrito .producto .info_producto .und_precio {
+  display: flex;
+  justify-content: space-between;
+}
+.container_carrito .content_carrito .carrito .producto .info_producto .und_precio .und input {
+  width: 30px;
+}
+.container_carrito .content_carrito .carrito .producto .info_producto .und_precio .precio {
+  display: inline-block;
+}
+.container_carrito .content_carrito .carrito .producto .info_producto .detalles_pedido {
+  height: auto;
+  padding: 5px;
+  font-size: 10px;
+}
+.container_carrito .content_carrito .footer_carrito {
+  width: 100%;
+  position: relative;
+  margin: auto;
+}
+.container_carrito .content_carrito .footer_carrito #totalCarrito {
+  width: 200px;
+  padding: 10px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid;
+  border-radius: 10px;
+}
+.container_carrito .content_carrito .footer_carrito .btn_carrito {
+  width: 200px;
+  height: 30px;
+  margin: 10px auto;
+}
+.container_carrito .content_carrito .footer_carrito .btn_carrito button {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.toggle_carrito {
+  display: block;
+}
+
+footer {
   background-color: #eee;
   padding: 10px;
 }
-body footer .title_footer {
+footer .title_footer {
   font-size: 26px;
   font-weight: 600;
   margin-bottom: 10px;

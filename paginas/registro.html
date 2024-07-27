@@ -17,7 +17,6 @@
 </head>
 
 <body>
-
     <header class=" header">
         <div class="content_header ">
             <div class="car">
@@ -53,38 +52,47 @@
             </div>
         </div>
         <div class="redes_sociales">
-            <a href="https://www.facebook.com/p/Bellas-Cakes-100083466205792/?_rdr"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.facebook.com/p/Bellas-Cakes-100083466205792/?_rdr"><i
+                    class="fa-brands fa-facebook"></i></a>
             <a href="https://www.instagram.com/bellascakespasteleria/"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://api.whatsapp.com/send?phone=+5491163716963&text=Hola%20me%20gustaría%20saber%20más%20sobre%20tus%20productos" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://api.whatsapp.com/send?phone=+5491163716963&text=Hola%20me%20gustaría%20saber%20más%20sobre%20tus%20productos"
+                target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
     </header>
 
     <main>
-        <section class="ingreso_usuario">
+        <section class="registro_usuario">
             <h3 class="title_section ">Registro usuario</h3>
             <article class="ingreso">
-                <form action="">
+                <form class="form_registro" action="">
                     <label for="nombre">Nombre</label>
-                    <input type="tel" name="nombre" id="nombre">
+                    <input type="text" name="nombre" id="nombreRegistro" required>
+                    <p id="errorNombre"></p>
 
                     <label for="apellido">Apellido</label>
-                    <input type="text" name="apellido" id="apellido">
+                    <input type="text" name="apellido" id="apellidoRegistro" required>
+                    <p id="errorApellido"></p>
 
                     <label for="Correo">Correo</label>
-                    <input type="email" name="Correo" id="Correo">
+                    <input type="email" name="Correo" id="correoRegistro" required>
+                    <p id="errorCorreo"></p>
 
                     <label for="Contraseña">Contraseña</label>
-                    <input type="text" name="Contraseña" id="Contraseña">
+                    <input type="text" name="Contraseña" id="contraseñaRegistro" required>
+                    <p id="errorContraseña"></p>
 
                     <label for="Contraseña">Repetir contraseña</label>
-                    <input type="text" name="Contraseña" id="Contraseña">
-                    
+                    <input type="text" name="Contraseña" id="contraseñaRepetRegistro" required>
+                    <p id="errorCtrRepet"></p>
+
                     <div class="terminos_condiciones center">
-                        <input type="checkbox" name="terminos" id="terminos">
+                        <input type="checkbox" name="terminos" id="terminosRegistro" required>
                         <label for="">Aceptar Terminos y condiciones</label>
+                        <p id="errorTerminos"></p>
+
                     </div>
                     <div class="btn_registro center">
-                        <button type="submit">Enviar</button>
+                        <button type="submit" id="btnRegistrar">Enviar</button>
                     </div>
                     <p class="center"><a href="ingreso.html">Ingreso usuario</a></p>
                 </form>

@@ -63,15 +63,17 @@
         <section class="ingreso_usuario">
             <h3 class="title_section ">Ingreso usuario</h3>
             <article class="ingreso">
-                <form action="">
+                <form class="form_ingreso" action="">
                     <label for="Correo">Correo</label>
-                    <input type="email" name="Correo" id="Correo">
+                    <input type="email" name="Correo" id="CorreoIngreso">
+                    
 
                     <label for="Contraseña">Contraseña</label>
-                    <input type="text" name="Contraseña" id="Contraseña">
+                    <input type="text" name="Contraseña" id="ContraseñaIngreso">
+                    <p id="errorContraseñaYCorreo" class="center"></p>
 
                     <div class="btn_registro center">
-                        <button type="submit">Ingresar</button>
+                        <button type="submit" id="btnIngresar">Ingresar</button>
                     </div>
                     <p class="olvido_contraseña center"> <a href="#">Olvido Contraseña</a></p>
                     <p class="center"><a href="registro.html">Registrarme</a></p>

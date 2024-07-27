@@ -100,40 +100,73 @@ header {
             }
         }
     }
+
+    .ingreso_registro {
+        height: 50px;
+        text-align: center;
+
+        width: 100%;
+        padding: 5px;
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        justify-content: center;
+        margin: auto;
+
+        .ingreso,
+        .registro {
+            border: 1px solid;
+            width: 170px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 30px;
+
+        }
+
+        .ingreso {
+            background-color: pink;
+
+        }
+    }
 }
 
-.ingreso_registro {
-    height: 50px;
-    text-align: center;
 
-    width: 100%;
-    padding: 5px;
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    justify-content: center;
-    margin: auto;
-
-    .ingreso,
-    .registro {
-        border: 1px solid;
-        width: 170px;
-        border-radius: 10px;
-        cursor: pointer;
-        font-size: 30px;
-
-    }
-
-    .ingreso {
-        background-color: pink;
-
-    }
-}
 
 
 body {
 
     main {
+        .container_usuario {
+            width: 100%;
+            max-width: 400px;
+            min-width: 280px;
+            margin: auto;
+
+            .usuario {
+                margin: auto;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .img {
+                    width: 60px;
+
+                    img {
+                        width: 100%;
+                        border-radius: 50%;
+                    }
+                }
+
+                .nombre {
+                    font-size: 20px;
+                    text-align: center;
+                }
+
+            }
+        }
+
         .hero {
             display: flex;
             flex-direction: column;
@@ -143,7 +176,7 @@ body {
             margin: auto 10px;
             border-radius: 40px;
 
-            background-image: url("../media/img/IMG-20240603-WA0098-min.jpg");
+            background-image: url("../media/img/shots_surtido.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -497,9 +530,9 @@ body {
         .ingreso_usuario,
         .registro_usuario {
             width: 100%;
-            height: 400px;
+            height: auto;
             padding: 10px;
-            
+
 
             .ingreso,
             .registro {
@@ -510,7 +543,7 @@ body {
                 min-width: 280px;
                 height: auto;
                 padding: 10px;
-                margin:  10px auto ;
+                margin: 10px auto;
 
                 form {
                     label {
@@ -530,9 +563,15 @@ body {
                         display: inline-block;
                     }
 
+                    p {
+                        font-size: 10px;
+                        font-weight: 700;
+                        margin-bottom: 5px;
+                    }
+
                     .btn_registro {
                         width: 100%;
-                        margin:  5px 0;
+                        margin: 5px 0;
 
                         button {
                             width: 100%;
@@ -550,25 +589,145 @@ body {
 
             }
         }
-    }
 
-
-
-
-    footer {
-        background-color: #eee;
-        padding: 10px;
-
-        .title_footer {
-            font-size: 26px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        // .nav_footer {}
 
     }
 }
+
+.container_carrito {
+    position: absolute;
+    top: 0;
+    display: none;
+
+    .content_carrito {
+        position: sticky;
+        min-width: 300px;
+        height: 100vh;
+        background-color: #EB7777;
+        top: 0;
+        padding: 5px;
+        overflow-y: auto;
+
+        .head_cart {
+            position: relative;
+            text-align: center;
+            height: 50px;
+            padding: 10px;
+
+            button {
+                position: absolute;
+                right: 0;
+
+            }
+        }
+
+        .carrito {
+            .producto {
+                display: flex;
+                flex-direction: row;
+
+                .content_img {
+                    max-width: 90px;
+
+                    img {
+                        width: 100%;
+                        border-radius: 10px;
+                    }
+
+                }
+
+                .info_producto {
+                    display: flex;
+                    flex-direction: column;
+                    width: 70%;
+
+                    .name {
+                        font-size: 20px;
+                    }
+
+                    .und_precio {
+                        display: flex;
+                        justify-content: space-between;
+
+                        .und {
+                            input {
+                                width: 30px;
+                            }
+                        }
+
+                        .precio {
+                            display: inline-block;
+
+                            .precio {}
+
+                            button {}
+                        }
+                    }
+
+                    .detalles_pedido {
+                        height: auto;
+                        padding: 5px;
+                        font-size: 10px;
+                    }
+
+                }
+            }
+        }
+
+        .footer_carrito {
+            width: 100%;
+            position: relative;
+
+            margin: auto;
+
+            #totalCarrito {
+                width: 200px;
+                padding: 10px;
+                margin: 10px auto;
+                display: flex;
+                justify-content: space-between;
+                border: 1px solid;
+                border-radius: 10px;
+            }
+
+            .btn_carrito {
+                width: 200px;
+                height: 30px;
+                margin: 10px auto;
+
+
+                button {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px;
+                }
+            }
+        }
+
+    }
+    
+}
+.toggle_carrito{
+        display: block;
+    }
+
+
+
+
+footer {
+    background-color: #eee;
+    padding: 10px;
+
+    .title_footer {
+        font-size: 26px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    // .nav_footer {}
+
+}
+
 
 .toggle_header {
     height: 100%;

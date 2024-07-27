@@ -367,6 +367,14 @@
             "categoria": "Alfajores",
             "descripcion": "",
             "img": ""
+        },
+        {
+            "id": 47,
+            "nombre": "Tres Leche",
+            "precio": "?",
+            "categoria": "Alfajores",
+            "descripcion": "",
+            "img": ""
         }
     ],
     "eventos":[
@@ -382,5 +390,29 @@
             "nombre": "Cumpleaños",
             "img": "../media/img/IMG-20240603-WA0004-min.jpg"
         } 
+    ],
+    "CombosShot":[
+        {
+            "id":1,
+            "cantidad": "por 12 unidades ",
+            "precio": "15000"
+        },
+        {
+            "id":2,
+            "cantidad": "por 24 unidades ",
+            "precio": "28800"
+
+        },
+        {
+            "id":3,
+            "cantidad": "por 36 unidades ",
+            "precio": "43200"
+
+        },
+        {
+            "id":4,
+            "cantidad": "por 48 unidades ",
+            "precio": "56200"
+        }
     ]
 }
