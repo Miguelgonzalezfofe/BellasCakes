@@ -17,48 +17,65 @@ function getBD(url) {
 
 getBD(url)
 
+
 // funcion cargarcatalogo 
 const cargarCatalogo = () => {
-    let content_productos = document.querySelector("#content_productos")
-    if (content_productos != null) {
+    setTimeout(() => {
+        let content_productos = document.querySelector("#content_productos")
+        if (content_productos != null) {
 
-        let catalogo = JSON.parse(localStorage.getItem("baseDatos"));
+            let catalogo = JSON.parse(localStorage.getItem("baseDatos"));
+            if (catalogo) {
+                catalogo.producto.forEach((e) => {
 
-        catalogo.producto.forEach((e) => {
+                    let producto = document.createElement("a")
 
-            let producto = document.createElement("a")
-
-            producto.innerHTML = `
+                    producto.innerHTML = `
                         <div class="producto">
                             <div class="img_producto">
                                 <img src="../${e.img}" alt="">
                             </div>
                             <div class="info_producto">
                                 <p class="nombre">${e.nombre}</p>
-                                <p class="precio">${e.precio}</p>
+                                <p class="precio">$${e.precio}</p>
                             </div>
                             <button id="agregarProducto${e.id}">Agregar</button>
                         </div>
                 `
-            content_productos.appendChild(producto)
-        })
-    }
+                    content_productos.appendChild(producto)
+                })
+                agregarBtnProductos()
+            }
+        }
+    }, 100);
+
+
+
+
 
 
 }
+
+
 // base Datos eventos
 let baseDatosEventos = JSON.parse(localStorage.getItem("baseDatos"))
 let turno = 0;
 // funcion cargarEvento
 const cargarEvento = () => {
-    let img = document.querySelector(".img_src");
-    let nombre = document.querySelector(".nombre_evento")
+    setTimeout(() => {
+        let img = document.querySelector(".img_src");
+        let nombre = document.querySelector(".nombre_evento")
 
-    if (img != null && nombre != null) {
-        let evento = baseDatosEventos.eventos[turno]
-        img.src = evento.img;
-        nombre.textContent = evento.nombre
-    }
+        if (img != null && nombre != null) {
+            let evento = baseDatosEventos.eventos[turno]
+            img.src = evento.img;
+            nombre.textContent = evento.nombre
+        }
+
+    }, 100);
+
+
+
 }
 // Siguiente evento
 let siguiente = () => {
@@ -87,7 +104,6 @@ const toogleHeader = () => {
 
 // Despliegue Preguntas Frecuentes
 let btns_preguntas = document.querySelectorAll("#preguntas")
-
 // recorrer btns
 btns_preguntas.forEach(function (btn) {
     btn.addEventListener("click", function (e) {
@@ -101,64 +117,96 @@ let idProductosDestacados = [
     /* tres leche grande, torta matilda, shots, postres indivivuales(), chocotorta, Petit four brownie,   */
 ]
 
+
+/* Cracion del contenedor del carro de compras para todas las paginas */
+let main = document.querySelector("main")
+let containerCarrito = document.createElement("div")
+containerCarrito.classList = "container_carrito"
+containerCarrito.innerHTML = `<section class="content_carrito">
+
+                <div class="head_cart">
+                    <button onclick="toggleCarrito()">x</button>
+                    <h3>Carro de compras</h3>
+                </div>
+                <div id="carrito" class="carrito">
+                </div>
+                <div class="footer_carrito">
+                    <div id="totalCarrito">
+                        <p>Total</p>
+                        <p class="total">$</p>
+                    </div>
+                    <div class="btn_carrito">
+
+                        <button>Realizar Pedido</button>
+                    </div>
+                    
+                </div>
+
+            </section>`
+
+main.prepend(containerCarrito)
+
+
+
 // Despliegue de Carro de compras
 const toggleCarrito = () => {
     let carrito = document.querySelector(".container_carrito")
     carrito.classList.toggle("toggle_carrito")
 }
 
-// cargar evento
-window.addEventListener("DOMContentLoaded", function () {
-    cargarEvento()
-    cargarCatalogo()
-})
-
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 /* MODELO USUARIO */
 
-
 // clase Producto para representar cada producto en la tienda
 class Producto {
-    constructor(id, nombre, precio, categoria, descripcion, img) {
+    constructor(id, nombre, precio, categoria, descripcion, img, cantidad) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
         this.categoria = categoria;
         this.descripcion = descripcion;
         this.img = img;
+        this.cantidad = cantidad
     }
 }
-// [{id:1,nombre:"arroz",precio:2000,categoria:"comida",descripcion:"salada",img:"http"},{id:1,nombre:"arroz",precio:2000,categoria:"comida",descripcion:"salada",img:"http"},{id:1,nombre:"arroz",precio:2000,categoria:"comida",descripcion:"salada",img:"http"},]
 
 // clase carrito para manejar la logica del carrito de compras
 class Carrito {
     constructor() {
-        this.productos = [/*{ id: 1, nombre: "arroz", precio: 2000, categoria: "comida", descripcion: "salada", img: "http" }, { id: 1, nombre: "arroz", precio: 2000, categoria: "comida", descripcion: "salada", img: "http" }, { id: 1, nombre: "arroz", precio: 2000, categoria: "comida", descripcion: "salada", img: "http" }*/]
-            ;
+        this.productos = [];
     }
 
     // metodo para agregar un producto al carrito
     agregarProducto(producto) {
-        this.productos.push(producto)
+        const productoExistente = this.productos.find(p => p.id === producto.id);
+        if (productoExistente) {
+            productoExistente.cantidad++;
+        }
+        else {
+            producto.cantidad = 1;
+            this.productos.push(producto)
+        }
     }
 
     // metodo para quitar un producto del carrito por su ID 
     quitarProducto(productoId) {
-        this.productos = this.productos.filter(p => p.id !== productoId)
 
-
-        /* **  aqui falta codigo para elimiar del carrito ** */
+        const productoExistente = this.productos.find(p => p.id === productoId)
+        if (productoExistente) {
+            productoExistente.cantidad--;
+            if (productoExistente.cantidad === 0) {
+                this.productos = this.productos.filter(p => p.id !== productoId)
+            }
+        }
     }
 
     // Metodo para obtener el total de la compra
     obtenerTotal() {
-        return this.productos.reduce((total, producto) => total + producto.precio, 0);
+        return this.productos.reduce((total, producto) => total + (producto.precio * producto.cantidad), 0);
     }
 }
-
-
 
 // Clase usuario para manejar la logica del usuario, incluyendo el carrito
 class Usuario {
@@ -181,15 +229,19 @@ class Usuario {
             password: this.password,
             carrito: this.carrito
         };
+
         localStorage.setItem("usuario", JSON.stringify(usuarioData))
 
     }
 
     guardarSesionCarrito() {
         let usuariosValidados = JSON.parse(localStorage.getItem("usuariosValidados"))
-        let carritoUsuario = usuariosValidados.find(id => id.id == this.id)
-        carritoUsuario.carrito = this.carrito
-        localStorage.setItem("usuariosValidados", JSON.stringify(usuariosValidados))
+        if (usuariosValidados) {
+            let carritoUsuario = usuariosValidados.find(id => id.id == this.id)
+            carritoUsuario.carrito = this.carrito
+            localStorage.setItem("usuariosValidados", JSON.stringify(usuariosValidados))
+        }
+
     }
 
     // Metodo para cargar la sesion del usuario desde localStorage
@@ -197,11 +249,11 @@ class Usuario {
         const usuarioData = JSON.parse(localStorage.getItem("usuario"))
         if (usuarioData) {
             const usuario = new Usuario(usuarioData.id, usuarioData.nombre, usuarioData.apellido, usuarioData.email, usuarioData.password)
-            usuario.carrito.productos = usuarioData.carrito.productos.map(p => new Producto(p.id, p.nombre, p.precio, p.categoria, p.descripcion, p.img));
+            usuario.carrito.productos = usuarioData.carrito.productos.map(p => new Producto(p.id, p.nombre, p.precio, p.categoria, p.descripcion, p.img, p.cantidad));
             return usuario
         } else {
             usuario = new Usuario("Nan", "sinUsuario", "sinUsuario", "sinUsuario", "sinUsuario")
-            // usuario.carrito.productos = [{ id: 1, nombre: "arroz", precio: 20000, categoria: "comida", descripcion: "salada", img: "http" }, { id: 1, nombre: "pizza", precio: 2000, categoria: "comida", descripcion: "salada", img: "http" },]
+            usuario.carrito.productos = []
             return usuario
         }
     }
@@ -241,7 +293,6 @@ function cargarUsuariosValidados() {
     } else {
         return usuarios = []
     }
-
 }
 
 // Funcion para guardar los usuario validados en localStorage
@@ -314,7 +365,6 @@ function validarDatosUsuario(nombre, apellido, email, password, passwordRepet, t
 function resgistrarUsuario(nombre, apellido, email, password, passwordRepet, terminos) {
     const errores = validarDatosUsuario(nombre, apellido, email, password, passwordRepet, terminos);
     if (errores.length > 0) {
-        console.log(errores)
         return null
     }
 
@@ -346,7 +396,7 @@ function iniciarSesion(email, password) {
     if (usuario) {
 
         usuario.guardarSesion();
-        console.log(usuario);
+
         // cambio de pagina web
         window.location.href = `../index.html`
 
@@ -397,6 +447,7 @@ class ControladorCarrito {
         this.usuario.guardarSesion();
         this.usuario.guardarSesionCarrito()
 
+
     }
 
 
@@ -411,14 +462,14 @@ class ControladorCarrito {
     actualizarvista() {
         actualizarVistaCarrito(this.usuario.carrito);
         this.usuario.guardarSesion();
-        
+
 
     }
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-// Funcion para actualizar la bista del carrito en el DOM
+// Funcion para actualizar la vista del carrito en el DOM
 function actualizarVistaCarrito(carrito) {
     const carritoElemento = document.getElementById("carrito")
     if (carritoElemento) {
@@ -429,67 +480,72 @@ function actualizarVistaCarrito(carrito) {
             productoElemento.innerHTML = `
             
                         <div class="content_img">
-                            <img src=${producto.img} alt="">
+                            <img src=../${producto.img} alt="">
                         </div>
                         <div class="info_producto">
                             <p class="name">${producto.nombre}</p>
                             <div class="und_precio">
                                 <div class="und">
-                                    <label for="unidad">und</label>
-                                    <input type="number" >
+                                    <label for="unidad">Cantidad : <span>${producto.cantidad}</span></label>
                                 </div>
                                 <div class="precio">
-                                    <p class="precio">$${producto.precio}</p>
-                                    <button class="btn_eliminar">x</button>
+                                    <button class="btn_eliminar">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+                                    <p class="precio">$${producto.precio * producto.cantidad}</p>
+                                    <button class="btn_sumar">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
                                 </div>
                             </div>
                             <div class="detalles_pedido">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus
+                            ${producto.descripcion}
                             </div>
                         </div>
             `
-
             carritoElemento.appendChild(productoElemento);
-
-
-
         })
+
+
 
         const totalElemento = document.getElementById("totalCarrito")
         totalElemento.textContent = `Total: $${carrito.obtenerTotal()}`;
 
+        obtenerBtnEliminar()
+        obtenerBtnSumar()
 
 
+    }
 }
+/* NOTIFICACION AL AGREGAR UN PRODUCTO AL CARRO */
+let alertNuevoProducto = () => {
+    Toastify({
+        text: "Nuevo producto Agregado",
+        duration:"3500",
+        className: "info",
+        gravity:"top",
+        position:"right",
+        style: {
+            background: "linear-gradient(to right, pink, #F9DEDC)",
+            color:"black",
+            borderRadius:"10px"
+        },
+    }).showToast();
 }
-// Función para mostrar el formulario de inicio de sesión
-// function mostrarFormularioInicioSesion() {
-//     const formulario = document.getElementById('formularioInicioSesion');
-//     formulario.style.display = 'block';
-// }
 
-// Función para ocultar el formulario de inicio de sesión
-// function ocultarFormularioInicioSesion() {
-//     const formulario = document.getElementById('formularioInicioSesion');
-//     formulario.style.display = 'none';
-// }
 
-// Función para mostrar el formulario de registro
-// function mostrarFormularioRegistro() {
-//     const formulario = document.getElementById('formularioRegistro');
-//     formulario.style.display = 'block';
-// }
 
-// Función para ocultar el formulario de registro
-// function ocultarFormularioRegistro() {
-//     const formulario = document.getElementById('formularioRegistro');
-//     formulario.style.display = 'none';
-// }
 
+
+// cargar evento
+window.addEventListener("DOMContentLoaded", function () {
+
+})
 
 // Codigo principal que se ejecuta cuando el dom se ha cargado
 document.addEventListener("DOMContentLoaded", () => {
+
+
     let usuario = Usuario.cargarSesion();
     let controladorCarrito
     if (Usuario.estaAutenticado() && usuario) {
@@ -501,43 +557,51 @@ document.addEventListener("DOMContentLoaded", () => {
         controladorCarrito = new ControladorCarrito(usuario);
         controladorCarrito.actualizarvista()
     }
+    cargarCatalogo()
+    cargarEvento()
 
 
-    let productosDisponibles = JSON.parse(localStorage.getItem("baseDatos"))
-
-
-    setTimeout(() => {
-        if (document.querySelector("#agregarProducto1")) {
-            productosDisponibles.producto.forEach(prodc => {
-                let botonAgregar = document.querySelector(`#agregarProducto${prodc.id}`)
-                botonAgregar.addEventListener("click", () => {
-                    controladorCarrito.agregarProductoAlCarrito(new Producto(prodc.id, prodc.nombre, prodc.precio, prodc.categoria, prodc.descripcion, prodc.img))
-                })
-
-                let botonEliminar = document.querySelectorAll(".btn_eliminar")
-                console.log(botonEliminar);
-                // botonEliminar.forEach(e=>{
-                //     e.addEventListener("click",()=>{
-                //         controladorCarrito.quitarPorductoDelCarrito(prodc.id)
-        
-                //     console.log("funioanrar");
-                //     })
-                // })
-
-            })
-
-        }
-
-
-    })
-    console.log(controladorCarrito.usuario.carrito)
-
-    // controladorCarrito.quitarPorductoDelCarrito(usuario.carrito.productos[0].id)
-
-        console.log(controladorCarrito.usuario.carrito)
-
-    
 });
+
+usuario = Usuario.cargarSesion()
+let controladorCarrito = new ControladorCarrito(usuario)
+let productosDisponibles = JSON.parse(localStorage.getItem("baseDatos"))
+
+const agregarBtnProductos = () => {
+
+    productosDisponibles.producto.forEach(prodc => {
+
+        let botonAgregar = document.querySelector(`#agregarProducto${prodc.id}`)
+
+        botonAgregar.addEventListener("click", () => {
+            controladorCarrito.agregarProductoAlCarrito(new Producto(prodc.id, prodc.nombre, prodc.precio, prodc.categoria, prodc.descripcion, prodc.img, prodc.cantidad))
+            alertNuevoProducto()
+        })
+    })
+}
+
+const obtenerBtnSumar = () => {
+    let botonSumar = document.querySelectorAll(".btn_sumar")
+    for (let i = 0; i < botonSumar.length; i++) {
+        botonSumar[i].addEventListener("click", () => {
+            controladorCarrito.agregarProductoAlCarrito(usuario.carrito.productos[i])
+        })
+    }
+}
+const obtenerBtnEliminar = () => {
+
+    let botonEliminar = document.querySelectorAll(`.btn_eliminar`)
+
+    for (let i = 0; i < botonEliminar.length; i++) {
+
+        botonEliminar[i].addEventListener("click", () => {
+
+            controladorCarrito.quitarPorductoDelCarrito(usuario.carrito.productos[i].id)
+        })
+    }
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+ */
 
 /* FORMULARIO DE REGISTRO */
 let formularioRegistro = document.querySelector(".form_registro")
@@ -560,4 +624,5 @@ if (btnRegistarUsuario && formularioRegistro) {
         event.preventDefault()
     })
 }
+
 

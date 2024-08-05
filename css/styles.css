@@ -174,8 +174,8 @@ body main .catalogo .content_productos {
 body main .destacados .content_productos .producto,
 body main .catalogo .content_productos .producto {
   overflow: hidden;
-  max-width: 170px;
-  height: 185px;
+  max-width: 180px;
+  height: auto;
   border-radius: 40px;
   display: flex;
   flex-direction: column;
@@ -202,14 +202,29 @@ body main .catalogo .content_productos .producto .img_producto img {
 body main .destacados .content_productos .producto .info_producto,
 body main .catalogo .content_productos .producto .info_producto {
   padding: 2px;
+  text-align: center;
 }
 body main .destacados .content_productos .producto .info_producto .nombre,
 body main .catalogo .content_productos .producto .info_producto .nombre {
-  color: pink;
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
 }
 body main .destacados .content_productos .producto .info_producto .precio,
 body main .catalogo .content_productos .producto .info_producto .precio {
-  color: red;
+  color: rgb(221, 40, 70);
+}
+body main .destacados .content_productos .producto button,
+body main .catalogo .content_productos .producto button {
+  width: 60%;
+  border-radius: 8px;
+  border: 1px solid #a5a4a4;
+  margin-bottom: 4px;
+}
+body main .destacados .content_productos .producto button:hover,
+body main .catalogo .content_productos .producto button:hover {
+  background-color: #EB7777;
+  transition: all 0.5s;
 }
 body main .eventos_especiales {
   margin: 10px 0;
@@ -501,15 +516,18 @@ body main .registro_usuario .registro form .btn_registro button {
   position: absolute;
   top: 0;
   display: none;
+  width: 300px;
 }
 .container_carrito .content_carrito {
-  position: sticky;
+  position: fixed;
+  width: 100%;
   min-width: 300px;
-  height: 100vh;
-  background-color: #EB7777;
+  height: 100%;
+  background-color: rgb(238, 111, 111);
   top: 0;
   padding: 5px;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 .container_carrito .content_carrito .head_cart {
   position: relative;
@@ -517,25 +535,41 @@ body main .registro_usuario .registro form .btn_registro button {
   height: 50px;
   padding: 10px;
 }
+.container_carrito .content_carrito .head_cart h3 {
+  font-size: 25px;
+}
 .container_carrito .content_carrito .head_cart button {
   position: absolute;
   right: 0;
+  width: 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.container_carrito .content_carrito .carrito {
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
 }
 .container_carrito .content_carrito .carrito .producto {
   display: flex;
   flex-direction: row;
+  min-height: 110px;
+  height: auto;
 }
 .container_carrito .content_carrito .carrito .producto .content_img {
-  max-width: 90px;
+  max-width: 80px;
+  max-height: 100px;
 }
 .container_carrito .content_carrito .carrito .producto .content_img img {
   width: 100%;
+  height: 100%;
   border-radius: 10px;
 }
 .container_carrito .content_carrito .carrito .producto .info_producto {
   display: flex;
   flex-direction: column;
   width: 70%;
+  padding: 3px;
 }
 .container_carrito .content_carrito .carrito .producto .info_producto .name {
   font-size: 20px;
@@ -544,40 +578,61 @@ body main .registro_usuario .registro form .btn_registro button {
   display: flex;
   justify-content: space-between;
 }
-.container_carrito .content_carrito .carrito .producto .info_producto .und_precio .und input {
-  width: 30px;
+.container_carrito .content_carrito .carrito .producto .info_producto .und_precio .und span {
+  font-weight: 600;
 }
 .container_carrito .content_carrito .carrito .producto .info_producto .und_precio .precio {
   display: inline-block;
 }
+.container_carrito .content_carrito .carrito .producto .info_producto .und_precio .precio .precio {
+  font-weight: 800;
+}
+.container_carrito .content_carrito .carrito .producto .info_producto .und_precio .precio button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 10px;
+  transition: ease-in-out 0.2s;
+  cursor: pointer;
+  font-size: 15px;
+}
+.container_carrito .content_carrito .carrito .producto .info_producto .und_precio .precio .btn_eliminar:hover {
+  background-color: rgb(204, 38, 38);
+}
+.container_carrito .content_carrito .carrito .producto .info_producto .und_precio .precio .btn_sumar:hover {
+  background-color: rgba(33, 134, 33, 0.909);
+}
 .container_carrito .content_carrito .carrito .producto .info_producto .detalles_pedido {
+  min-height: 50px;
   height: auto;
   padding: 5px;
   font-size: 10px;
 }
-.container_carrito .content_carrito .footer_carrito {
-  width: 100%;
-  position: relative;
-  margin: auto;
-}
 .container_carrito .content_carrito .footer_carrito #totalCarrito {
-  width: 200px;
   padding: 10px;
   margin: 10px auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   border: 1px solid;
   border-radius: 10px;
+  background-color: #eee;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.666);
+  font-weight: 600;
 }
 .container_carrito .content_carrito .footer_carrito .btn_carrito {
-  width: 200px;
-  height: 30px;
+  height: 35px;
   margin: 10px auto;
 }
 .container_carrito .content_carrito .footer_carrito .btn_carrito button {
   width: 100%;
   height: 100%;
   border-radius: 10px;
+  background-color: #eee;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.666);
+}
+.container_carrito .content_carrito .footer_carrito .btn_carrito button:hover {
+  background-color: rgb(51, 151, 51);
+  transition: all 0.3s;
 }
 
 .toggle_carrito {
