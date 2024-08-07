@@ -269,6 +269,8 @@ class Usuario {
             </div>
         `
         }
+
+        btnCerrarSesion()
     }
 
     // Metodo statico para cerrar la sesion del usuario
@@ -288,8 +290,10 @@ let usuarios = []
 function cargarUsuariosValidados() {
 
     usuarios = JSON.parse(localStorage.getItem("usuariosValidados"))
+    
+
     if (usuarios) {
-        return usuarios.map(u => new Usuario(u.id, u.nombre, u.apellido, u.email, u.password))
+        return usuarios.map(u => new Usuario(u.id, u.nombre, u.apellido, u.email, u.password, u.carrito))
     } else {
         return usuarios = []
     }
@@ -298,6 +302,7 @@ function cargarUsuariosValidados() {
 // Funcion para guardar los usuario validados en localStorage
 function guardarUsuariosValidados() {
     localStorage.setItem("usuariosValidados", JSON.stringify(usuarios))
+
 }
 
 // Cargar la lista de usuarios validados al iniciar la aplicacion
@@ -380,7 +385,10 @@ function resgistrarUsuario(nombre, apellido, email, password, passwordRepet, ter
         localStorage.setItem("autenticado", "true")
         guardarUsuariosValidados();
         nuevoUsuario.guardarSesion()
-        window.location.href = "../index.html"
+        alertRegistroUsuario()
+        setTimeout(() => {
+            window.location.href = "../index.html"
+        }, 2000);
         return nuevoUsuario
     }
 }
@@ -391,15 +399,20 @@ function resgistrarUsuario(nombre, apellido, email, password, passwordRepet, ter
 let usuario
 let errorContraseñaYCorreo = document.getElementById("errorContraseñaYCorreo")
 function iniciarSesion(email, password) {
-
+    let usuarioingresado= JSON.parse(localStorage.getItem("usuariosValidados"))
     usuario = usuariosValidados.find(u => u.email === email && u.password === password)
+    usuario.carrito = usuarioingresado[usuario.id-1].carrito
+    console.log(usuario);
     if (usuario) {
 
+        localStorage.setItem("autenticado", "true")
+        guardarUsuariosValidados()
         usuario.guardarSesion();
-
+        alertIngresoUsuario(usuario.nombre)
         // cambio de pagina web
-        window.location.href = `../index.html`
-
+        setTimeout(() => {
+            window.location.href = `../index.html`
+        }, 2000);
 
         return usuario
     } else {
@@ -409,11 +422,31 @@ function iniciarSesion(email, password) {
 
 }
 
+
+
+
+
 // Funcion para cerrar la sesion del usuario actual 
-function cerrarSesion() {
-    usuario.cerrarSesion();
+function cerrarLaSesion() {
+    Usuario.cerrarSesion()
     location.reload() // Recarga la pagina despues de cerrar sesion
 }
+// creador del boton Cerrar Sesion
+let btnCerrarSesion = () => {
+    let contentSesion = document.querySelector(".ingreso_registro")
+    contentSesion.innerHTML = `
+                <div class="cerrar center">
+                    <a>Cerrar Sesion</a>
+                </div>`
+
+    let btnCerrar = document.querySelector(".cerrar")
+    btnCerrar.addEventListener("click", () => {
+        cerrarLaSesion()
+    })
+
+}
+
+
 
 let form_ingreso = document.querySelector(".form_ingreso")
 let btnIngresar = document.getElementById("btnIngresar")
@@ -425,7 +458,10 @@ if (form_ingreso && btnIngresar) {
 
         let correoIngreso = document.getElementById("CorreoIngreso").value
         let passwordIngreso = document.getElementById("ContraseñaIngreso").value
+        usuariosValidados = cargarUsuariosValidados()
         iniciarSesion(correoIngreso, passwordIngreso)
+        guardarUsuariosValidados()
+
     })
 }
 
@@ -521,16 +557,42 @@ function actualizarVistaCarrito(carrito) {
 let alertNuevoProducto = () => {
     Toastify({
         text: "Nuevo producto Agregado",
-        duration:"3500",
+        duration: "3500",
         className: "info",
-        gravity:"top",
-        position:"right",
+        gravity: "top",
+        position: "right",
         style: {
             background: "linear-gradient(to right, pink, #F9DEDC)",
-            color:"black",
-            borderRadius:"10px"
+            color: "black",
+            borderRadius: "10px"
         },
     }).showToast();
+}
+let alertIngresoUsuario = (usuario) => {
+    Toastify({
+        text: `Ingreso exitoso: ${usuario}`,
+        duration: "3000",
+        gravity: "top",
+        position: "right",
+        style: {
+            background: "linear-gradient(to right, pink, #F9DEDC)",
+            color: "black",
+            borderRadius: "10px"
+        },
+    }).showToast()
+}
+let alertRegistroUsuario = () => {
+    Toastify({
+        text: "Registro exitoso",
+        duration: "3000",
+        gravity: "top",
+        position: "right",
+        style: {
+            background: "linear-gradient(to right, pink, #F9DEDC)",
+            color: "black",
+            borderRadius: "10px"
+        },
+    }).showToast()
 }
 
 
@@ -553,6 +615,7 @@ document.addEventListener("DOMContentLoaded", () => {
         controladorCarrito.actualizarvista()
         usuario.actualizarPerfil()
 
+
     } else {
         controladorCarrito = new ControladorCarrito(usuario);
         controladorCarrito.actualizarvista()
@@ -562,6 +625,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
+
 
 usuario = Usuario.cargarSesion()
 let controladorCarrito = new ControladorCarrito(usuario)

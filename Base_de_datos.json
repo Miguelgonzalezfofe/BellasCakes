@@ -3,87 +3,87 @@
         {
             "id": 1,
             "nombre": "Combo kids(Mediano)",
-            "precio": 122900,
+            "precio": "122900",
             "categoria": "Mesa Dulce",
-            "descripcion": "torta mediana",
+            "descripcion": "torta de tamaño mediano",
             "img":"media/img/Combo_kids(mediano)img2.jpg"
         },
         {
             "id": 2,
             "nombre": "Combo kids(Pequeño)",
-            "precio": 79400,
+            "precio": "79400",
             "categoria": "Mesa Dulce",
-            "descripcion": "",
+            "descripcion": "torta de tamaño pequeña",
             "img": "media/img/Combo_kids(pequeño).jpg"
         },
         {   
             "id": 3,
             "nombre": "Combo Adultos(Pequeños)",
-            "precio": 104900,
+            "precio": "104900",
             "categoria": "Mesa Dulce",
-            "descripcion": "",
+            "descripcion": "torta de tamaño pequeña para adultos",
             "img": "media/img/Combo_mesa_dulce_adultos(pequeño).jpg"
         },
         {   
             "id": 4,
             "nombre": "Combo Adultos(Medianos)",
-            "precio": 165900,
+            "precio": "165900",
             "categoria": "Mesa Dulce",
-            "descripcion": "",
+            "descripcion": "torta de tamaño mediano para adultos",
             "img": "media/img/Combo_mesa_dulce_adultos(mediano).jpg"
         },
         {
             "id": 5,
             "nombre": "Combo Mixto(Pequeño)",
-            "precio": "?",
+            "precio": "80000",
             "categoria": "Mesa Dulce",
-            "descripcion": "",
+            "descripcion": "combo de dulces tamaño pequeño",
             "img": "media/img/Combo_mesa_dulce_mixto(pequeño).jpg"
         },
         {
             "id": 6,
             "nombre": "Combo Mixto(Mediano)",
-            "precio": "?",
+            "precio": "35000",
             "categoria": "Mesa Dulce",
-            "descripcion": "",
+            "descripcion": "combo de dulces tamaño mediano",
             "img": "media/img/Combo_mesa_dulce_mixto(mediano).jpg"
         },
         {
             "id": 7,
             "nombre": "ButterCream Cakes",
-            "precio": "?",
+            "precio": "40000",
             "categoria": "Tortas Principales",
-            "descripcion": "",
+            "descripcion": "Torta de especialidad",
             "img": "media/img/Buttercream_cakes.jpg"
         },
         {
             "id": 8,
             "nombre": "Wedding Cake",
-            "precio": "?",
+            "precio": "45000",
             "categoria": "Tortas Principales",
-            "descripcion": "",
-            "img": ""
+            "descripcion": "Tortas de especialidad",
+            "img": "media/img/wedding_cake.jpg"
         },
         {
             "id": 9,
             "nombre": "torta Corazón",
-            "precio": "?",
+            "precio": "60000",
             "categoria": "Tortas Principales",
-            "descripcion": "",
-            "img": ""
+            "descripcion": "Torta con forma de corazón",
+            "img": "media/img/tortaCorazon.jpg"
         },
         {
             "id": 10,
             "nombre": "Clásicas - Cobertura Chantilly",
-            "precio": "",
+            "precio": "50000",
             "categoria": "Tortas Principales",
-            "descripcion": "",
-            "img": ""
+            "descripcion": "Torta con cubertura",
+            "img": "media/img/clasica_chantilly.jpg"
         },
         {
             "id": 11,
             "nombre": "Mini Brownie",
-            "precio": "?",
+            "precio": "?5",
             "categoria": "Petit Fours",
             "descripcion": "",
             "img": ""
