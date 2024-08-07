@@ -1,11 +1,228 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bellas Cakes tiene justo lo que necesitas para esos momentos importantes">
+    <meta name="keywords" content="Tortas, Postres, dulces, cumpleaños, fiestas">
+    <meta name="author" content="Miguel Gonzalez">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="media\img\logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Bellas Cakes ⭐Inicio⭐</title>
 </head>
+
 <body>
-    
+    <header class=" header">
+        <div class="content_header ">
+            <div class="car">
+                <i class="fa-solid fa-cart-shopping" onclick="toggleCarrito()"></i>
+            </div>
+            <div class="logo center">
+                <img id="logo_header" src="media/img/logo.jpg" alt="Logo Bellas Cakes">
+            </div>
+            <div class="menu">
+                <i class="fa-solid fa-bars" onclick="toogleHeader()"></i>
+            </div>
+        </div>
+        <div class="buscador_header center">
+            <input id="buscador" type="text">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <nav>
+            <ul class="list_nav">
+                <li class="center"><a href="index.html">Inicio</a></li>
+                <li class="center"><a href="paginas/nosotros.html">Nosotros</a></li>
+                <li class="center"><a href="paginas/contacto.html">Contacto</a></li>
+                <li class="center"><a href="paginas/catalogo.html">Catálogo</a></li>
+                <li class="center"><a href="paginas/preguntas_frecuentes.html">Preguntas Frecuentes</a></li>
+            </ul>
+        </nav>
+        <div class="ingreso_registro">
+            <div class="ingreso center">
+                <a href="paginas/ingreso.html">Ingreso</a>
+            </div>
+            <div class="registro center">
+                <a href="paginas/registro.html">Registro</a>
+            </div>
+        </div>
+        <div class="redes_sociales">
+            <a href="https://www.facebook.com/p/Bellas-Cakes-100083466205792/?_rdr"><i
+                    class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/bellascakespasteleria/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://api.whatsapp.com/send?phone=+5491163716963&text=Hola%20me%20gustaría%20saber%20más%20sobre%20tus%20productos"
+                target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </header>
+
+
+    <main>
+        <div class="container_usuario"></div>
+        <section class="hero">
+            <div class="text_hero">
+                <p>Sabores que cautivan, aromas que seducen¡Descubre un mundo de tentaciones!</p>
+            </div>
+            <div class="btn_hero ">
+                <button id="btn_hero" href="paginas//Catalogo.html">Ver Catálogo</button>
+            </div>
+        </section>
+        <section class="destacados">
+            <h3 class=" title_section">Destacados</h3>
+            <div class="content_productos">
+                <a href="index.html">
+                    <div class="producto">
+                        <div class="img_producto">
+                            <img src="media/img/Buttercream_cakes.jpg" alt="">
+                        </div>
+                        <div class="info_producto">
+                            <p class="nombre">Nombre</p>
+                            <p class="precio">Precio</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="index.html">
+                    <div class="producto">
+                        <div class="img_producto">
+                            <img src="media/img/Buttercream_cakes.jpg" alt="">
+                        </div>
+                        <div class="info_producto">
+                            <p class="nombre">Nombre</p>
+                            <p class="precio">Precio</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="index.html">
+                    <div class="producto">
+                        <div class="img_producto">
+                            <img src="media/img/Buttercream_cakes.jpg" alt="">
+                        </div>
+                        <div class="info_producto">
+                            <p class="nombre">Nombre</p>
+                            <p class="precio">Precio</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="index.html">
+                    <div class="producto">
+                        <div class="img_producto">
+                            <img src="media/img/Buttercream_cakes.jpg" alt="">
+                        </div>
+                        <div class="info_producto">
+                            <p class="nombre">Nombre</p>
+                            <p class="precio">Precio</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="index.html">
+                    <div class="producto">
+                        <div class="img_producto">
+                            <img src="media/img/Buttercream_cakes.jpg" alt="">
+                        </div>
+                        <div class="info_producto">
+                            <p class="nombre">Nombre</p>
+                            <p class="precio">Precio</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="index.html">
+                    <div class="producto">
+                        <div class="img_producto">
+                            <img src="media/img/Buttercream_cakes.jpg" alt="">
+                        </div>
+                        <div class="info_producto">
+                            <p class="nombre">Nombre</p>
+                            <p class="precio">Precio</p>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+        <section class="eventos_especiales">
+            <h3 class="title_section">Eventos Especiales</h3>
+            <article class="content_evento">
+                <div class="img_evento">
+                    <img class="img_src" src="" alt="">
+                </div>
+                <div class="content_arrow_info">
+                    <div class="anterior">
+                        <i id="btn_anterior_evento_especiales" class="fa-solid fa-arrow-left" onclick="anterior()"></i>
+                    </div>
+                    <div class="info_evento center_colum">
+                        <p class="nombre_evento"></p>
+                        <button class="btn_consultar_evento">Consultar</button>
+                    </div>
+                    <div class="siguiente">
+                        <i id="btn_siguiente_evento_especiales" class="fa-solid fa-arrow-right"
+                            onclick="siguiente()"></i>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section class="galeria_img">
+            <h3 class="title_section">
+                Galería de Imágenes
+            </h3>
+            <div class="galeria">
+                <img src="media/img/Combo_kids(mediano)img1.jpg" alt="">
+                <img src="media/img/Combo_kids(mediano)img1.jpg" alt="">
+                <img src="media/img/Combo_kids(mediano)img1.jpg" alt="">
+                <img src="media/img/Combo_kids(mediano)img1.jpg" alt="">
+                <img src="media/img/Combo_kids(mediano)img1.jpg" alt="">
+                <img src="media/img/Combo_kids(mediano)img1.jpg" alt="">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="title_footer center">
+            <h3>Bellas Cakes</h3>
+        </div>
+        <nav class="nav_footer">
+            <ul class="list_nav">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Catálogo</a></li>
+                <li><a href="#">Preguntas Frecuentes</a></li>
+            </ul>
+        </nav>
+        <div class="redes_sociales">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        <div class="contacto_footer">
+            <h4 class="title_footer center">Contacto</h4>
+            <div class="info_contacto list_nav">
+                <p>Horario: --</p>
+                <p>Teléfono: --</p>
+                <p>Correo -- </p>
+            </div>
+            <div class="ubicacion_footer">
+                <!-- ubicacion_footer -->
+            </div>
+        </div>
+        <div class="avisos_legales">
+            <h4 class="title_footer center">Avisos Legales</h4>
+            <ul class="list_nav">
+                <li><a href="#">Política de Privacidad</a></li>
+                <li><a href="#">Políticas de Cookies</a></li>
+                <li><a href="#">Preguntas Frecuentes</a></li>
+            </ul>
+            <p class="center">Copyright: ©Bellas Cakes</p>
+            <p class="center">Creado por : Miguel Gonzalez</p>
+        </div>
+
+    </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="js/main.js"></script>
 </body>
+
 </html>

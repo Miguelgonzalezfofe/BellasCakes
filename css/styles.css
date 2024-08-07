@@ -1,0 +1,724 @@
+/* Styles header */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 800px;
+}
+
+header {
+  height: 169px;
+  overflow: hidden;
+}
+header .content_header {
+  display: grid;
+  grid-template-columns: 58px 1fr 58px;
+  grid-template-rows: 170px;
+}
+header .content_header .car {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+header .content_header .car .fa-cart-shopping {
+  font-size: 48px;
+  color: pink;
+  cursor: pointer;
+}
+header .content_header .menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+header .content_header .menu .fa-bars {
+  font-size: 48px;
+  color: pink;
+  cursor: pointer;
+}
+header .content_header .logo #logo_header {
+  width: 80%;
+  height: 100%;
+}
+header .buscador_header {
+  border: 1px solid;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 40px;
+}
+header .buscador_header #buscador {
+  border: none;
+  width: 100%;
+  height: 43px;
+  border-radius: 20px 0 0 20px;
+}
+header .buscador_header .fa-magnifying-glass {
+  font-size: 25px;
+  text-align: right;
+  margin: 10px;
+  cursor: pointer;
+}
+header nav {
+  margin-top: 10px;
+  height: 280px;
+}
+header nav li {
+  width: 90%;
+  height: 44px;
+  background: linear-gradient(rgba(242, 132, 124, 0.5058823529), #F9DEDC);
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+header nav li:hover {
+  scale: 1.1;
+}
+header nav li a {
+  width: 100%;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  font-size: 24px;
+}
+header .ingreso_registro {
+  height: 50px;
+  text-align: center;
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: center;
+  margin: auto;
+}
+header .ingreso_registro .ingreso,
+header .ingreso_registro .registro {
+  border: 1px solid;
+  width: 170px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 30px;
+}
+header .ingreso_registro .ingreso {
+  background-color: pink;
+}
+
+body main .container_usuario {
+  width: 100%;
+  max-width: 400px;
+  min-width: 280px;
+  margin: auto;
+}
+body main .container_usuario .usuario {
+  margin: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body main .container_usuario .usuario .img {
+  width: 60px;
+}
+body main .container_usuario .usuario .img img {
+  width: 100%;
+  border-radius: 50%;
+}
+body main .container_usuario .usuario .nombre {
+  font-size: 20px;
+  text-align: center;
+}
+body main .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 290px;
+  height: 355px;
+  margin: auto 10px;
+  border-radius: 40px;
+  background-image: url("../media/img/shots_surtido.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+body main .hero .text_hero {
+  font-size: 32px;
+  height: 180px;
+  width: 90%;
+  margin: auto;
+}
+body main .hero .text_hero p {
+  padding: 5px;
+  text-align: center;
+}
+body main .hero .btn_hero {
+  margin-bottom: 20px;
+}
+body main .hero .btn_hero #btn_hero {
+  background-color: #F9DEDC;
+  width: 200px;
+  height: 45px;
+  border-radius: 40px;
+  cursor: pointer;
+}
+body main .destacados .content_productos,
+body main .catalogo .content_productos {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+  padding: 6px;
+}
+body main .destacados .content_productos .producto,
+body main .catalogo .content_productos .producto {
+  overflow: hidden;
+  max-width: 180px;
+  height: auto;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3803921569);
+  transition: all 0.5s;
+  margin: auto;
+}
+body main .destacados .content_productos .producto:hover,
+body main .catalogo .content_productos .producto:hover {
+  scale: 1.04;
+}
+body main .destacados .content_productos .producto .img_producto,
+body main .catalogo .content_productos .producto .img_producto {
+  width: 100%;
+  height: 128px;
+}
+body main .destacados .content_productos .producto .img_producto img,
+body main .catalogo .content_productos .producto .img_producto img {
+  width: 100%;
+  height: 100%;
+}
+body main .destacados .content_productos .producto .info_producto,
+body main .catalogo .content_productos .producto .info_producto {
+  padding: 2px;
+  text-align: center;
+}
+body main .destacados .content_productos .producto .info_producto .nombre,
+body main .catalogo .content_productos .producto .info_producto .nombre {
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+}
+body main .destacados .content_productos .producto .info_producto .precio,
+body main .catalogo .content_productos .producto .info_producto .precio {
+  color: rgb(221, 40, 70);
+}
+body main .destacados .content_productos .producto button,
+body main .catalogo .content_productos .producto button {
+  width: 60%;
+  border-radius: 8px;
+  border: 1px solid #a5a4a4;
+  margin-bottom: 4px;
+}
+body main .destacados .content_productos .producto button:hover,
+body main .catalogo .content_productos .producto button:hover {
+  background-color: #EB7777;
+  transition: all 0.5s;
+}
+body main .eventos_especiales {
+  margin: 10px 0;
+}
+body main .eventos_especiales .content_evento {
+  width: 300px;
+  height: 280px;
+  border-radius: 20px;
+  margin: auto;
+  overflow: hidden;
+  background-color: #F9DEDC;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body main .eventos_especiales .content_evento .img_evento {
+  height: 67%;
+}
+body main .eventos_especiales .content_evento .img_evento img {
+  width: 100%;
+  height: 100%;
+}
+body main .eventos_especiales .content_evento .content_arrow_info {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+body main .eventos_especiales .content_evento .content_arrow_info .fa-arrow-left,
+body main .eventos_especiales .content_evento .content_arrow_info .fa-arrow-right {
+  font-size: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+body main .eventos_especiales .content_evento .content_arrow_info .fa-arrow-left:hover,
+body main .eventos_especiales .content_evento .content_arrow_info .fa-arrow-right:hover {
+  scale: 1.2;
+}
+body main .eventos_especiales .content_evento .content_arrow_info .info_evento .nombre_evento {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+body main .eventos_especiales .content_evento .content_arrow_info .info_evento .btn_consultar_evento {
+  width: 195px;
+  height: 30px;
+  border-radius: 40px;
+  border: none;
+  color: white;
+  background-color: #EB7777;
+  box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.448);
+  cursor: pointer;
+}
+body main .galeria_img .galeria {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+}
+body main .galeria_img .galeria img {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 1px 2px 5px;
+  margin: auto;
+}
+body main .buscador {
+  width: 100%;
+  height: 150px;
+  padding: 5px;
+}
+body main .buscador .box_buscador {
+  background-color: white;
+  border-radius: 20px;
+  height: 43px;
+  width: 100%;
+  margin: auto;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: stretch;
+}
+body main .buscador .box_buscador #buscador {
+  width: 90%;
+  height: 100%;
+  border-radius: 20px 0 0 20px;
+  border: none;
+  padding: 5px;
+}
+body main .buscador .box_buscador i {
+  display: inline-block;
+  font-size: 23px;
+}
+body main .buscador .box_filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+body main .buscador .box_filter .categoria,
+body main .buscador .box_filter .precio {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main .buscador .box_filter .categoria label,
+body main .buscador .box_filter .precio label {
+  font-size: 23px;
+}
+body main .buscador .box_filter .categoria input,
+body main .buscador .box_filter .categoria select,
+body main .buscador .box_filter .precio input,
+body main .buscador .box_filter .precio select {
+  width: 80%;
+  height: 27px;
+  border-radius: 20px;
+  border: none;
+}
+body main .nosotros {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+body main .nosotros .quienes_somos,
+body main .nosotros .nuestra_mision {
+  width: 100%;
+  max-width: 490px;
+  min-width: 260px;
+  height: auto;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 4px 7px #969595;
+  border-radius: 20px;
+}
+body main .nosotros .quienes_somos .info_quienes_somos,
+body main .nosotros .quienes_somos .info_nuestra_mision,
+body main .nosotros .nuestra_mision .info_quienes_somos,
+body main .nosotros .nuestra_mision .info_nuestra_mision {
+  padding: 5px;
+}
+body main .nosotros .quienes_somos img,
+body main .nosotros .nuestra_mision img {
+  width: 100%;
+  height: 300px;
+}
+body main .contacto .formulario {
+  padding: 15px;
+}
+body main .contacto .formulario form {
+  border-radius: 20px;
+  box-shadow: 2px 3px 8px #999898;
+  width: 100%;
+  max-width: 400px;
+  min-width: 270px;
+  padding: 10px;
+}
+body main .contacto .formulario form label {
+  display: block;
+}
+body main .contacto .formulario form input {
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid rgba(128, 128, 128, 0.719);
+}
+body main .contacto .formulario form textarea {
+  width: 100%;
+  height: 150px;
+  max-width: 100%;
+  border-radius: 5px;
+  border: 1px solid rgba(128, 128, 128, 0.719);
+}
+body main .contacto .formulario form .btn_form button {
+  margin: 5px;
+  width: 250px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.719);
+}
+body main .preguntas_frecuentes {
+  padding: 10px;
+}
+body main .preguntas_frecuentes .pregunta_frecuente {
+  border: 1px solid #969595;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 350px;
+  min-width: 260px;
+  height: 33px;
+  overflow: hidden;
+  margin: 8px auto;
+}
+body main .preguntas_frecuentes .pregunta_frecuente .pregunta {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+body main .preguntas_frecuentes .pregunta_frecuente .pregunta h4 {
+  font-weight: 600;
+}
+body main .preguntas_frecuentes .pregunta_frecuente .pregunta i {
+  font-size: 20px;
+  cursor: pointer;
+}
+body main .preguntas_frecuentes .pregunta_frecuente .resp_pregunta {
+  padding: 8px;
+}
+body main .preguntas_frecuentes .toggle_pregunta {
+  height: 100%;
+}
+body main .ingreso_usuario,
+body main .registro_usuario {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+body main .ingreso_usuario .ingreso,
+body main .ingreso_usuario .registro,
+body main .registro_usuario .ingreso,
+body main .registro_usuario .registro {
+  border-radius: 20px;
+  box-shadow: -2px 2px 9px #969595;
+  width: 100%;
+  max-width: 400px;
+  min-width: 280px;
+  height: auto;
+  padding: 10px;
+  margin: 10px auto;
+}
+body main .ingreso_usuario .ingreso form label,
+body main .ingreso_usuario .registro form label,
+body main .registro_usuario .ingreso form label,
+body main .registro_usuario .registro form label {
+  display: inline-block;
+}
+body main .ingreso_usuario .ingreso form input,
+body main .ingreso_usuario .registro form input,
+body main .registro_usuario .ingreso form input,
+body main .registro_usuario .registro form input {
+  width: 100%;
+  height: 25px;
+  border: 1px solid #969595;
+  border-radius: 10px;
+  padding-left: 5px;
+}
+body main .ingreso_usuario .ingreso form input[type=checkbox],
+body main .ingreso_usuario .registro form input[type=checkbox],
+body main .registro_usuario .ingreso form input[type=checkbox],
+body main .registro_usuario .registro form input[type=checkbox] {
+  width: 14px;
+  display: inline-block;
+}
+body main .ingreso_usuario .ingreso form p,
+body main .ingreso_usuario .registro form p,
+body main .registro_usuario .ingreso form p,
+body main .registro_usuario .registro form p {
+  font-size: 10px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+body main .ingreso_usuario .ingreso form .btn_registro,
+body main .ingreso_usuario .registro form .btn_registro,
+body main .registro_usuario .ingreso form .btn_registro,
+body main .registro_usuario .registro form .btn_registro {
+  width: 100%;
+  margin: 5px 0;
+}
+body main .ingreso_usuario .ingreso form .btn_registro button,
+body main .ingreso_usuario .registro form .btn_registro button,
+body main .registro_usuario .ingreso form .btn_registro button,
+body main .registro_usuario .registro form .btn_registro button {
+  width: 100%;
+  height: 30px;
+  border-radius: 20px;
+  border: 1px solid #969595;
+  box-shadow: 2px 4px 5px #969595;
+  background-color: pink;
+}
+
+.container_carrito {
+  position: absolute;
+  top: 0;
+  display: none;
+  width: 300px;
+}
+.container_carrito .content_carrito {
+  position: fixed;
+  width: 100%;
+  min-width: 300px;
+  height: 100%;
+  background-color: rgb(238, 111, 111);
+  top: 0;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.container_carrito .content_carrito .head_cart {
+  position: relative;
+  text-align: center;
+  height: 50px;
+  padding: 10px;
+}
+.container_carrito .content_carrito .head_cart h3 {
+  font-size: 25px;
+}
+.container_carrito .content_carrito .head_cart button {
+  position: absolute;
+  right: 0;
+  width: 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.container_carrito .content_carrito .carrito {
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.container_carrito .content_carrito .carrito .producto {
+  display: flex;
+  flex-direction: row;
+  min-height: 110px;
+  height: auto;
+}
+.container_carrito .content_carrito .carrito .producto .content_img {
+  max-width: 80px;
+  max-height: 100px;
+}
+.container_carrito .content_carrito .carrito .producto .content_img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.container_carrito .content_carrito .carrito .producto .info_producto {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  padding: 3px;
+}
+.container_carrito .content_carrito .carrito .producto .info_producto .name {
+  font-size: 20px;
+}
+.container_carrito .content_carrito .carrito .producto .info_producto .und_precio {
+  display: flex;
+  justify-content: space-between;
+}
+.container_carrito .content_carrito .carrito .producto .info_producto .und_precio .und span {
+  font-weight: 600;
+}
+.container_carrito .content_carrito .carrito .producto .info_producto .und_precio .precio {
+  display: inline-block;
+}
+.container_carrito .content_carrito .carrito .producto .info_producto .und_precio .precio .precio {
+  font-weight: 800;
+}
+.container_carrito .content_carrito .carrito .producto .info_producto .und_precio .precio button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 10px;
+  transition: ease-in-out 0.2s;
+  cursor: pointer;
+  font-size: 15px;
+}
+.container_carrito .content_carrito .carrito .producto .info_producto .und_precio .precio .btn_eliminar:hover {
+  background-color: rgb(204, 38, 38);
+}
+.container_carrito .content_carrito .carrito .producto .info_producto .und_precio .precio .btn_sumar:hover {
+  background-color: rgba(33, 134, 33, 0.909);
+}
+.container_carrito .content_carrito .carrito .producto .info_producto .detalles_pedido {
+  min-height: 50px;
+  height: auto;
+  padding: 5px;
+  font-size: 10px;
+}
+.container_carrito .content_carrito .footer_carrito #totalCarrito {
+  padding: 10px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid;
+  border-radius: 10px;
+  background-color: #eee;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.666);
+  font-weight: 600;
+}
+.container_carrito .content_carrito .footer_carrito .btn_carrito {
+  height: 35px;
+  margin: 10px auto;
+}
+.container_carrito .content_carrito .footer_carrito .btn_carrito button {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #eee;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.666);
+}
+.container_carrito .content_carrito .footer_carrito .btn_carrito button:hover {
+  background-color: rgb(51, 151, 51);
+  transition: all 0.3s;
+}
+
+.toggle_carrito {
+  display: block;
+}
+
+footer {
+  background-color: #eee;
+  padding: 10px;
+}
+footer .title_footer {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.toggle_header {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: baseline;
+  gap: 10px;
+}
+
+.center_colum {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.redes_sociales {
+  height: 60px;
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.redes_sociales .fa-facebook,
+.redes_sociales .fa-instagram,
+.redes_sociales .fa-whatsapp {
+  font-size: 40px;
+  transition: all 0.1s;
+}
+.redes_sociales .fa-facebook:hover,
+.redes_sociales .fa-instagram:hover,
+.redes_sociales .fa-whatsapp:hover {
+  scale: 1.1;
+}
+.redes_sociales .fa-facebook {
+  color: blue;
+}
+.redes_sociales .fa-instagram {
+  color: rgb(203, 23, 53);
+}
+.redes_sociales .fa-whatsapp {
+  color: green;
+}
+
+.list_nav {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style-type: none;
+  font-size: 20px;
+}
+
+.title_section {
+  background: linear-gradient(rgba(242, 132, 124, 0.5058823529), #F9DEDC);
+  width: 95%;
+  border-radius: 20px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+/*# sourceMappingURL=styles.css.map */

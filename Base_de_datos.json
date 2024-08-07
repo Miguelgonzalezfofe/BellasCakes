@@ -1,0 +1,418 @@
+{
+    "producto": [
+        {
+            "id": 1,
+            "nombre": "Combo kids(Mediano)",
+            "precio": 122900,
+            "categoria": "Mesa Dulce",
+            "descripcion": "torta mediana",
+            "img":"media/img/Combo_kids(mediano)img2.jpg"
+        },
+        {
+            "id": 2,
+            "nombre": "Combo kids(Pequeño)",
+            "precio": 79400,
+            "categoria": "Mesa Dulce",
+            "descripcion": "",
+            "img": "media/img/Combo_kids(pequeño).jpg"
+        },
+        {   
+            "id": 3,
+            "nombre": "Combo Adultos(Pequeños)",
+            "precio": 104900,
+            "categoria": "Mesa Dulce",
+            "descripcion": "",
+            "img": "media/img/Combo_mesa_dulce_adultos(pequeño).jpg"
+        },
+        {   
+            "id": 4,
+            "nombre": "Combo Adultos(Medianos)",
+            "precio": 165900,
+            "categoria": "Mesa Dulce",
+            "descripcion": "",
+            "img": "media/img/Combo_mesa_dulce_adultos(mediano).jpg"
+        },
+        {
+            "id": 5,
+            "nombre": "Combo Mixto(Pequeño)",
+            "precio": "?",
+            "categoria": "Mesa Dulce",
+            "descripcion": "",
+            "img": "media/img/Combo_mesa_dulce_mixto(pequeño).jpg"
+        },
+        {
+            "id": 6,
+            "nombre": "Combo Mixto(Mediano)",
+            "precio": "?",
+            "categoria": "Mesa Dulce",
+            "descripcion": "",
+            "img": "media/img/Combo_mesa_dulce_mixto(mediano).jpg"
+        },
+        {
+            "id": 7,
+            "nombre": "ButterCream Cakes",
+            "precio": "?",
+            "categoria": "Tortas Principales",
+            "descripcion": "",
+            "img": "media/img/Buttercream_cakes.jpg"
+        },
+        {
+            "id": 8,
+            "nombre": "Wedding Cake",
+            "precio": "?",
+            "categoria": "Tortas Principales",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 9,
+            "nombre": "torta Corazón",
+            "precio": "?",
+            "categoria": "Tortas Principales",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 10,
+            "nombre": "Clásicas - Cobertura Chantilly",
+            "precio": "",
+            "categoria": "Tortas Principales",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 11,
+            "nombre": "Mini Brownie",
+            "precio": "?",
+            "categoria": "Petit Fours",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 12,
+            "nombre": "Mini Lemon pie",
+            "precio": "?",
+            "categoria": "Petit Fours",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 13,
+            "nombre": "Mini red Velvet",
+            "precio": "?",
+            "categoria": "Petit Fours",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 14,
+            "nombre": "Mini Rogel",
+            "precio": "",
+            "categoria": "Petit Fours",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 15,
+            "nombre": "Tres Leche",
+            "precio": 1500,
+            "categoria": "Postres Individuales",
+            "descripcion": "Es un bizcocho de vainilla bañado en 3 leches con un toque de canela decorada con Chantilly y canela",
+            "img": ""
+        },
+        {
+            "id": 16,
+            "nombre": "Chocotorta",
+            "precio": 1500,
+            "categoria": "Postres Individuales",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 17,
+            "nombre": "Red velvet",
+            "precio": "1500",
+            "categoria": "Postres Individuales",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 18,
+            "nombre": "Matilda",
+            "precio": "1500",
+            "categoria": "Postres Individuales",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 19,
+            "nombre": "Oreo",
+            "precio": "1500",
+            "categoria": "Postres Individuales",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 20,
+            "nombre": "Cheesecakes de Maracay",
+            "precio": "1600",
+            "categoria": "Postres Individuales",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 21,
+            "nombre": "Cheesecakes de Frutilla",
+            "precio": "1500",
+            "categoria": "Postres Individuales",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 22,
+            "nombre": "Cheesecakes de Frutos Rojos",
+            "precio": "1500",
+            "categoria": "Postres Individuales",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 23,
+            "nombre": "Choco-Oreo",
+            "precio": "1500",
+            "categoria": "Postres Individuales",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 24,
+            "nombre": "Tiramisu",
+            "precio": "1500",
+            "categoria": "Postres Individuales",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 25,
+            "nombre": "Box Party #1",
+            "precio": "?",
+            "categoria": "Pastelería temática",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 26,
+            "nombre": "Box party #2",
+            "precio": "?",
+            "categoria": "Pastelería temática",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 27,
+            "nombre": "Box Party #3",
+            "precio": "?",
+            "categoria": "Pastelería temática",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 28,
+            "nombre": "box party #4",
+            "precio": "?",
+            "categoria": "Pastelería temática",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 29,
+            "nombre": "CupCakes Temáticos",
+            "precio": "?",
+            "categoria": "Pastelería temática",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 30,
+            "nombre": "Box Emma",
+            "precio": "20000",
+            "categoria": "Desayunos/Meriendas",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 31,
+            "nombre": "Box Sofia",
+            "precio": "19300",
+            "categoria": "Desayunos/Meriendas",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 32,
+            "nombre": "Box Sol",
+            "precio": "20500",
+            "categoria": "Desayunos/Meriendas",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 33,
+            "nombre": "Box Simple",
+            "precio": "14700",
+            "categoria": "Desayunos/Meriendas",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 34,
+            "nombre": "Lemon Pie",
+            "precio": "?",
+            "categoria": "Tartas",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 35,
+            "nombre": "Trata Frutilla",
+            "precio": "?",
+            "categoria": "Tartas",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 36,
+            "nombre": "Pastafrola",
+            "precio": "",
+            "categoria": "Tartas",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 37,
+            "nombre": "Tarta de Coco",
+            "precio": "?",
+            "categoria": "Tartas",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 38,
+            "nombre": "Tarta Tofy(Havannet)",
+            "precio": "",
+            "categoria": "Tartas",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 39,
+            "nombre": "Tarta de Ricotta",
+            "precio": "",
+            "categoria": "Tartas",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 40,
+            "nombre": "Tortas Personalizada 16cm 1 relleno",
+            "precio": "15900",
+            "categoria": "Tortas Personalizadas",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 41,
+            "nombre": "Tortas Personalizada 18cm 2 relleno",
+            "precio": "26900",
+            "categoria": "Tortas Personalizadas",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 42,
+            "nombre": "Tortas Personalizada 24cm 2 rellenos",
+            "precio": "33900",
+            "categoria": "Tortas Personalizadas",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 43,
+            "nombre": "Tortas Personalizada 24cm 3 rellenos ",
+            "precio": "39900",
+            "categoria": "Tortas Personalizadas",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 44,
+            "nombre": "Alfajores de Almendra",
+            "precio": "?",
+            "categoria": "Alfajores",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 45,
+            "nombre": "Alfajores Marplatense",
+            "precio": "?",
+            "categoria": "Alfajores",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 46,
+            "nombre": "Alfajores de Maicena",
+            "precio": "?",
+            "categoria": "Alfajores",
+            "descripcion": "",
+            "img": ""
+        },
+        {
+            "id": 47,
+            "nombre": "Tres Leche",
+            "precio": "?",
+            "categoria": "Alfajores",
+            "descripcion": "",
+            "img": ""
+        }
+    ],
+    "eventos":[
+        {
+            "nombre": "Boda",
+            "img": "../media/img/Combo_mesa_dulce_mixto(pequeño).jpg"
+        },
+        {
+            "nombre": "Bautizos",
+            "img": "../media/img/IMG-20240603-WA0019-min.jpg"
+        },
+        {
+            "nombre": "Cumpleaños",
+            "img": "../media/img/IMG-20240603-WA0004-min.jpg"
+        } 
+    ],
+    "CombosShot":[
+        {
+            "id":1,
+            "cantidad": "por 12 unidades ",
+            "precio": "15000"
+        },
+        {
+            "id":2,
+            "cantidad": "por 24 unidades ",
+            "precio": "28800"
+
+        },
+        {
+            "id":3,
+            "cantidad": "por 36 unidades ",
+            "precio": "43200"
+
+        },
+        {
+            "id":4,
+            "cantidad": "por 48 unidades ",
+            "precio": "56200"
+        }
+    ]
+}
