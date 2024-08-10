@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Styles header */
 * {
   box-sizing: border-box;
@@ -748,6 +749,16 @@ a {
   width: 100px;
   height: auto;
   border-radius: 20px;
+}
+
+.toastify .toastify-close-button {
+  color: black; /* Color del icono de cierre */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo del botón de cierre */
+  border-radius: 50%; /* Hacer el botón redondo */
+}
+
+.toastify .toastify-close-button:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo del botón de cierre al pasar el ratón */
 }
 
 /*# sourceMappingURL=styles.css.map */
