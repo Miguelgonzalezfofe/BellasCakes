@@ -95,10 +95,16 @@ header .ingreso_registro {
   margin: auto;
 }
 header .ingreso_registro .ingreso,
-header .ingreso_registro .registro,
-header .ingreso_registro .cerrar {
+header .ingreso_registro .registro {
   border: 1px solid;
   width: 170px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 30px;
+}
+header .ingreso_registro .cerrar {
+  border: 1px solid;
+  width: auto;
   border-radius: 10px;
   cursor: pointer;
   font-size: 30px;

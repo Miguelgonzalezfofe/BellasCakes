@@ -114,14 +114,20 @@ header {
         margin: auto;
 
         .ingreso,
-        .registro,
-        .cerrar {
+        .registro{
             border: 1px solid;
             width: 170px;
             border-radius: 10px;
             cursor: pointer;
             font-size: 30px;
 
+        }
+        .cerrar{
+            border: 1px solid;
+            width: auto;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 30px;
         }
 
         .ingreso, .cerrar {
