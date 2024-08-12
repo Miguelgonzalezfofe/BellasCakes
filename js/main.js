@@ -263,7 +263,7 @@ class Usuario {
             containerUsuario.innerHTML = `
             <div class="usuario">
                 <div class="img">
-                    <img src="media/img/logo.jpg" alt="">
+                    <i class="fa-solid fa-user"></i>
                 </div>
                 <p class="nombre">${this.nombre} ${this.apellido}</p>
             </div>

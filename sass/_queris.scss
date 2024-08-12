@@ -1,0 +1,132 @@
+@media only screen and (min-width: 730px) {
+    html {
+        header {
+            height: auto;
+
+            .content_header {
+                display: flex;
+                justify-content: center;
+
+                .car {
+                    position: absolute;
+                    left: 45px;
+                    top: 70px;
+                }
+
+                .logo {
+                    #logo_header {
+                        width: 280px;
+                        height: 200px;
+                    }
+                }
+
+                .menu {
+                    display: none;
+                }
+            }
+
+            .buscador_header {
+                position: relative;
+                top: 85px;
+                width: 700px;
+                margin: auto;
+
+
+            }
+
+            nav {
+                position: relative;
+                height: auto;
+                bottom: 70px;
+                margin-top: 0;
+
+                ul {
+                    li {
+                        width: auto;
+                        padding: 10px;
+                    }
+                }
+            }
+
+            .ingreso_registro {
+                position: relative;
+                bottom: 190px;
+                right: 33px;
+                justify-content: end;
+
+                .ingreso,
+                .registro,
+                .cerrar {
+                    width: auto;
+                    height: 30px;
+                    font-size: 22px;
+                }
+
+                .cerrar {
+                    width: 155px;
+                }
+            }
+
+            .redes_sociales {
+                position: absolute;
+                top: 225px;
+                max-width: none;
+                width: 100%;
+                justify-content: center;
+                gap: 40px;
+
+                .fa-facebook,
+                .fa-instagram,
+                .fa-whatsapp {
+                    font-size: 50px;
+                }
+            }
+        }
+
+        body {
+            main {
+                .container_usuario {
+                    width: 100px;
+                    height: 50px;
+                    position: absolute;
+                    top: 28px;
+                    right: 40px;
+                }
+
+                .hero {
+                    max-width: none;
+                    margin: auto 20px;
+
+                    .text_hero{
+                        font-size: 45px;
+                    }
+
+                    .btn_hero{
+
+                        #btn_hero{
+                            padding: 10px 20px;
+                            font-size: 22px;
+                        }
+                    }
+                }
+
+                .eventos_especiales{
+                    .content_evento{
+                        height: 450px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .list_nav {
+        flex-direction: row;
+        align-items: start;
+        justify-content: center;
+        gap: 15px;
+
+    }
+
+
+}

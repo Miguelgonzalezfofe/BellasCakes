@@ -46,21 +46,24 @@ header .content_header .logo #logo_header {
   height: 100%;
 }
 header .buscador_header {
+  position: relative;
   border: 1px solid;
   border-radius: 20px;
-  display: grid;
-  grid-template-columns: 1fr 40px;
+  margin: 0 20px;
 }
 header .buscador_header #buscador {
   border: none;
   width: 100%;
   height: 43px;
-  border-radius: 20px 0 0 20px;
+  border-radius: 20px;
+  padding: 0 35px 0 10px;
+  font-size: 18px;
 }
 header .buscador_header .fa-magnifying-glass {
+  position: absolute;
+  right: 8px;
   font-size: 25px;
-  text-align: right;
-  margin: 10px;
+  text-align: left;
   cursor: pointer;
 }
 header nav {
@@ -111,7 +114,7 @@ header .ingreso_registro .ingreso, header .ingreso_registro .cerrar {
 body main .container_usuario {
   width: 100%;
   max-width: 400px;
-  min-width: 280px;
+  min-width: 150px;
   margin: auto;
 }
 body main .container_usuario .usuario {
@@ -120,30 +123,30 @@ body main .container_usuario .usuario {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
 }
 body main .container_usuario .usuario .img {
   width: 60px;
-}
-body main .container_usuario .usuario .img img {
-  width: 100%;
-  border-radius: 50%;
+  font-size: 40px;
+  color: pink;
+  text-align: center;
 }
 body main .container_usuario .usuario .nombre {
   font-size: 20px;
-  text-align: center;
+  text-align: start;
 }
 body main .hero {
   display: flex;
   position: relative;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   min-width: 290px;
   height: 355px;
-  margin: auto 10px;
+  margin: auto 20px;
   border-radius: 40px;
   background-image: url("../media/img/shots_surtido.jpg");
-  background-size: cover;
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
   overflow: hidden;
@@ -157,11 +160,11 @@ body main .hero::before {
   width: 100%;
   height: 100%;
   background: inherit;
-  filter: brightness(0.7);
+  filter: brightness(0.6);
   z-index: -1;
 }
 body main .hero .text_hero {
-  font-size: 32px;
+  font-size: 30px;
   height: 180px;
   width: 90%;
   margin: auto;
@@ -172,11 +175,10 @@ body main .hero .text_hero p {
   color: white;
 }
 body main .hero .btn_hero {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 body main .hero .btn_hero #btn_hero {
   background-color: #F9DEDC;
-  width: 200px;
   height: 45px;
   border-radius: 40px;
   padding: 10px;
@@ -246,10 +248,11 @@ body main .catalogo .content_productos .producto button:hover {
   width: 76%;
 }
 body main .eventos_especiales {
-  margin: 10px 0;
+  margin: 10px 30px;
 }
 body main .eventos_especiales .content_evento {
-  width: 300px;
+  max-width: 450px;
+  max-height: 450px;
   height: 280px;
   border-radius: 20px;
   margin: auto;
@@ -703,8 +706,9 @@ a {
   max-width: 600px;
   margin: auto;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  gap: 30px;
 }
 .redes_sociales .fa-facebook,
 .redes_sociales .fa-instagram,
@@ -759,6 +763,100 @@ a {
 
 .toastify .toastify-close-button:hover {
   background-color: rgba(0, 0, 0, 0.7); /* Fondo del botón de cierre al pasar el ratón */
+}
+
+@media only screen and (min-width: 730px) {
+  html header {
+    height: auto;
+  }
+  html header .content_header {
+    display: flex;
+    justify-content: center;
+  }
+  html header .content_header .car {
+    position: absolute;
+    left: 45px;
+    top: 70px;
+  }
+  html header .content_header .logo #logo_header {
+    width: 280px;
+    height: 200px;
+  }
+  html header .content_header .menu {
+    display: none;
+  }
+  html header .buscador_header {
+    position: relative;
+    top: 85px;
+    width: 700px;
+    margin: auto;
+  }
+  html header nav {
+    position: relative;
+    height: auto;
+    bottom: 70px;
+    margin-top: 0;
+  }
+  html header nav ul li {
+    width: auto;
+    padding: 10px;
+  }
+  html header .ingreso_registro {
+    position: relative;
+    bottom: 190px;
+    right: 33px;
+    justify-content: end;
+  }
+  html header .ingreso_registro .ingreso,
+  html header .ingreso_registro .registro,
+  html header .ingreso_registro .cerrar {
+    width: auto;
+    height: 30px;
+    font-size: 22px;
+  }
+  html header .ingreso_registro .cerrar {
+    width: 155px;
+  }
+  html header .redes_sociales {
+    position: absolute;
+    top: 225px;
+    max-width: none;
+    width: 100%;
+    justify-content: center;
+    gap: 40px;
+  }
+  html header .redes_sociales .fa-facebook,
+  html header .redes_sociales .fa-instagram,
+  html header .redes_sociales .fa-whatsapp {
+    font-size: 50px;
+  }
+  html body main .container_usuario {
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 28px;
+    right: 40px;
+  }
+  html body main .hero {
+    max-width: none;
+    margin: auto 20px;
+  }
+  html body main .hero .text_hero {
+    font-size: 45px;
+  }
+  html body main .hero .btn_hero #btn_hero {
+    padding: 10px 20px;
+    font-size: 22px;
+  }
+  html body main .eventos_especiales .content_evento {
+    height: 450px;
+  }
+  .list_nav {
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    gap: 15px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
