@@ -184,6 +184,10 @@ body main .hero .btn_hero #btn_hero {
   padding: 10px;
   cursor: pointer;
 }
+body main .destacados,
+body main .catalogo {
+  margin: auto 30px;
+}
 body main .destacados .content_productos,
 body main .catalogo .content_productos {
   display: grid;
@@ -248,7 +252,7 @@ body main .catalogo .content_productos .producto button:hover {
   width: 76%;
 }
 body main .eventos_especiales {
-  margin: 10px 30px;
+  margin: auto 30px;
 }
 body main .eventos_especiales .content_evento {
   max-width: 450px;
@@ -300,6 +304,9 @@ body main .eventos_especiales .content_evento .content_arrow_info .info_evento .
   background-color: #EB7777;
   box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.448);
   cursor: pointer;
+}
+body main .galeria_img {
+  margin: auto 30px;
 }
 body main .galeria_img .galeria {
   padding: 5px;
@@ -369,7 +376,7 @@ body main .buscador .box_filter .precio select {
   border: none;
 }
 body main .nosotros {
-  padding: 10px;
+  margin: auto 30px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -767,7 +774,7 @@ a {
 
 @media only screen and (min-width: 730px) {
   html header {
-    height: auto;
+    height: 230px;
   }
   html header .content_header {
     display: flex;
@@ -794,7 +801,7 @@ a {
   html header nav {
     position: relative;
     height: auto;
-    bottom: 70px;
+    bottom: 25px;
     margin-top: 0;
   }
   html header nav ul li {
@@ -818,17 +825,30 @@ a {
     width: 155px;
   }
   html header .redes_sociales {
-    position: absolute;
-    top: 225px;
+    background-color: transparent;
+    position: fixed;
+    bottom: 30px;
+    right: 0;
     max-width: none;
-    width: 100%;
-    justify-content: center;
-    gap: 40px;
+    width: auto;
+    height: auto;
+    border-radius: 20px;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1;
+  }
+  html header .redes_sociales:hover {
+    margin-right: 4px;
   }
   html header .redes_sociales .fa-facebook,
   html header .redes_sociales .fa-instagram,
   html header .redes_sociales .fa-whatsapp {
-    font-size: 50px;
+    font-size: 30px;
+  }
+  html header .redes_sociales .fa-facebook:hover,
+  html header .redes_sociales .fa-instagram:hover,
+  html header .redes_sociales .fa-whatsapp:hover {
+    scale: 1.3;
   }
   html body main .container_usuario {
     width: 100px;
@@ -839,7 +859,7 @@ a {
   }
   html body main .hero {
     max-width: none;
-    margin: auto 20px;
+    margin: auto 30px;
   }
   html body main .hero .text_hero {
     font-size: 45px;
