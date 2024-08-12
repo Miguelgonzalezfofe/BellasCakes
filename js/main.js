@@ -2,8 +2,8 @@
 // Get base datos
 let url = "/Base_de_datos.json"
 
-function getBD(url) {
-    fetch(url)
+function setBD(url) {
+    return fetch(url)
         .then(Response => Response.json())
         .then(Data => {
             let baseDatos = Data;
@@ -14,23 +14,27 @@ function getBD(url) {
             console.log("error")
         })
 }
+function getBD() {
+    return JSON.parse(localStorage.getItem("baseDatos"))
 
-getBD(url)
+}
 
 
 // funcion cargarcatalogo 
-const cargarCatalogo = () => {
-    setTimeout(() => {
-        let content_productos = document.querySelector("#content_productos")
-        if (content_productos != null) {
+async function cargarCatalogo() {
+    let content_productos = document.querySelector("#content_productos")
 
-            let catalogo = JSON.parse(localStorage.getItem("baseDatos"));
-            if (catalogo) {
-                catalogo.producto.forEach((e) => {
+    if (content_productos != null) {
 
-                    let producto = document.createElement("a")
+        let catalogo = getBD()
 
-                    producto.innerHTML = `
+
+        if (catalogo) {
+            catalogo.producto.forEach((e) => {
+
+                let producto = document.createElement("a")
+
+                producto.innerHTML = `
                         <div class="producto">
                             <div class="img_producto">
                                 <img src="../${e.img}" alt="">
@@ -42,40 +46,30 @@ const cargarCatalogo = () => {
                             <button id="agregarProducto${e.id}">Agregar</button>
                         </div>
                 `
-                    content_productos.appendChild(producto)
-                })
-                agregarBtnProductos()
-            }
+                content_productos.appendChild(producto)
+            })
+            agregarBtnProductos()
         }
-    }, 100);
 
-
-
-
-
+    }
 
 }
 
 
 // base Datos eventos
-let baseDatosEventos = JSON.parse(localStorage.getItem("baseDatos"))
 let turno = 0;
+let baseDatosEventos = getBD()
 // funcion cargarEvento
 const cargarEvento = () => {
-    setTimeout(() => {
-        let img = document.querySelector(".img_src");
-        let nombre = document.querySelector(".nombre_evento")
+    baseDatosEventos = getBD()
+    let img = document.querySelector(".img_src");
+    let nombre = document.querySelector(".nombre_evento")
 
-        if (img != null && nombre != null) {
-            let evento = baseDatosEventos.eventos[turno]
-            img.src = evento.img;
-            nombre.textContent = evento.nombre
-        }
-
-    }, 100);
-
-
-
+    if (img != null && nombre != null) {
+        let evento = baseDatosEventos.eventos[turno]
+        img.src = evento.img;
+        nombre.textContent = evento.nombre
+    }
 }
 // Siguiente evento
 let siguiente = () => {
@@ -94,6 +88,12 @@ let anterior = () => {
     cargarEvento()
 }
 
+const cargarDatos = () => {
+    setBD(url).then(() => {
+        cargarCatalogo();
+        cargarEvento();
+    })
+}
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // Despliegue del menu  
@@ -263,7 +263,7 @@ class Usuario {
             containerUsuario.innerHTML = `
             <div class="usuario">
                 <div class="img">
-                    <img src="media/img/logo.jpg" alt="">
+                    <i class="fa-solid fa-user"></i>
                 </div>
                 <p class="nombre">${this.nombre} ${this.apellido}</p>
             </div>
@@ -290,7 +290,7 @@ let usuarios = []
 function cargarUsuariosValidados() {
 
     usuarios = JSON.parse(localStorage.getItem("usuariosValidados"))
-    
+
 
     if (usuarios) {
         return usuarios.map(u => new Usuario(u.id, u.nombre, u.apellido, u.email, u.password, u.carrito))
@@ -348,10 +348,10 @@ function validarDatosUsuario(nombre, apellido, email, password, passwordRepet, t
     }
 
     // Verificar que la contraseña tenga al menos 6 caracteres, 1 numero y 1 caractes especial
-    const regexPassword = /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{6,})/;
+    const regexPassword = /^(?=.*[0-9])(?=.*[!@#$%^&*.])(?=.{6,})/;
     if (!regexPassword.test(password)) {
         errores.push("Error de contraseña")
-        errorContraseña.textContent = "La contraseña debe tener al menos 6 caracteres, incluir un número y un carácter especial"
+        errorContraseña.textContent = "La contraseña debe tener al menos 6 caracteres, incluir un número y un carácter especial(!@#$%^&*.)"
     }
     if (password !== passwordRepet) {
         errores.push("Error de ctrRepetida")
@@ -399,9 +399,9 @@ function resgistrarUsuario(nombre, apellido, email, password, passwordRepet, ter
 let usuario
 let errorContraseñaYCorreo = document.getElementById("errorContraseñaYCorreo")
 function iniciarSesion(email, password) {
-    let usuarioingresado= JSON.parse(localStorage.getItem("usuariosValidados"))
+    let usuarioingresado = JSON.parse(localStorage.getItem("usuariosValidados"))
     usuario = usuariosValidados.find(u => u.email === email && u.password === password)
-    usuario.carrito = usuarioingresado[usuario.id-1].carrito
+    usuario.carrito = usuarioingresado[usuario.id - 1].carrito
     console.log(usuario);
     if (usuario) {
 
@@ -557,27 +557,34 @@ function actualizarVistaCarrito(carrito) {
 let alertNuevoProducto = () => {
     Toastify({
         text: "Nuevo producto Agregado",
-        duration: "3500",
+        duration: "2500",
         className: "info",
+        close: true,
         gravity: "top",
         position: "right",
         style: {
             background: "linear-gradient(to right, pink, #F9DEDC)",
             color: "black",
-            borderRadius: "10px"
+            borderRadius: "10px",
         },
+        onClick: function(){
+            toggleCarrito()
+            
+        }
     }).showToast();
 }
 let alertIngresoUsuario = (usuario) => {
     Toastify({
         text: `Ingreso exitoso: ${usuario}`,
         duration: "3000",
+        close: true,
         gravity: "top",
         position: "right",
         style: {
             background: "linear-gradient(to right, pink, #F9DEDC)",
             color: "black",
-            borderRadius: "10px"
+            borderRadius: "10px",
+            paddingRight: '40px'
         },
     }).showToast()
 }
@@ -585,6 +592,7 @@ let alertRegistroUsuario = () => {
     Toastify({
         text: "Registro exitoso",
         duration: "3000",
+        close: true,
         gravity: "top",
         position: "right",
         style: {
@@ -620,8 +628,7 @@ document.addEventListener("DOMContentLoaded", () => {
         controladorCarrito = new ControladorCarrito(usuario);
         controladorCarrito.actualizarvista()
     }
-    cargarCatalogo()
-    cargarEvento()
+    cargarDatos();
 
 
 });
@@ -630,9 +637,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 usuario = Usuario.cargarSesion()
 let controladorCarrito = new ControladorCarrito(usuario)
-let productosDisponibles = JSON.parse(localStorage.getItem("baseDatos"))
+
 
 const agregarBtnProductos = () => {
+    let productosDisponibles = getBD()
 
     productosDisponibles.producto.forEach(prodc => {
 
