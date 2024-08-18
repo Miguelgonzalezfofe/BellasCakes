@@ -6,10 +6,6 @@
   padding: 0;
 }
 
-html {
-  height: 800px;
-}
-
 header {
   height: 169px;
   overflow: hidden;
@@ -41,7 +37,7 @@ header .content_header .menu .fa-bars {
   color: pink;
   cursor: pointer;
 }
-header .content_header .logo #logo_header {
+header .content_header .logo a #logo_header {
   width: 80%;
   height: 100%;
 }
@@ -107,7 +103,8 @@ header .ingreso_registro .cerrar {
   cursor: pointer;
   font-size: 30px;
 }
-header .ingreso_registro .ingreso, header .ingreso_registro .cerrar {
+header .ingreso_registro .ingreso,
+header .ingreso_registro .cerrar {
   background-color: pink;
 }
 
@@ -186,7 +183,7 @@ body main .hero .btn_hero #btn_hero {
 }
 body main .destacados,
 body main .catalogo {
-  margin: auto 30px;
+  margin: auto;
 }
 body main .destacados .content_productos,
 body main .catalogo .content_productos {
@@ -255,47 +252,56 @@ body main .eventos_especiales {
   margin: auto 30px;
 }
 body main .eventos_especiales .content_evento {
-  max-width: 450px;
-  max-height: 450px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+body main .eventos_especiales .content_evento .evento {
+  max-width: 390px;
+  min-width: 300px;
   height: 280px;
+  width: 390px;
   border-radius: 20px;
-  margin: auto;
   overflow: hidden;
   background-color: #F9DEDC;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-body main .eventos_especiales .content_evento .img_evento {
+body main .eventos_especiales .content_evento .evento .img_evento {
   height: 67%;
 }
-body main .eventos_especiales .content_evento .img_evento img {
+body main .eventos_especiales .content_evento .evento .img_evento img {
   width: 100%;
   height: 100%;
 }
-body main .eventos_especiales .content_evento .content_arrow_info {
+body main .eventos_especiales .content_evento .evento .content_arrow_info {
   height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
 }
-body main .eventos_especiales .content_evento .content_arrow_info .fa-arrow-left,
-body main .eventos_especiales .content_evento .content_arrow_info .fa-arrow-right {
+body main .eventos_especiales .content_evento .evento .content_arrow_info .fa-arrow-left,
+body main .eventos_especiales .content_evento .evento .content_arrow_info .fa-arrow-right {
   font-size: 30px;
   cursor: pointer;
   transition: all 0.3s;
 }
-body main .eventos_especiales .content_evento .content_arrow_info .fa-arrow-left:hover,
-body main .eventos_especiales .content_evento .content_arrow_info .fa-arrow-right:hover {
+body main .eventos_especiales .content_evento .evento .content_arrow_info .fa-arrow-left:hover,
+body main .eventos_especiales .content_evento .evento .content_arrow_info .fa-arrow-right:hover {
   scale: 1.2;
 }
-body main .eventos_especiales .content_evento .content_arrow_info .info_evento .nombre_evento {
+body main .eventos_especiales .content_evento .evento .content_arrow_info .info_evento .nombre_evento {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 10px;
 }
-body main .eventos_especiales .content_evento .content_arrow_info .info_evento .btn_consultar_evento {
+body main .eventos_especiales .content_evento .evento .content_arrow_info .info_evento .btn_consultar_evento {
   width: 195px;
   height: 30px;
   border-radius: 40px;
@@ -304,6 +310,19 @@ body main .eventos_especiales .content_evento .content_arrow_info .info_evento .
   background-color: #EB7777;
   box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.448);
   cursor: pointer;
+}
+body main .eventos_especiales .content_evento .descrip_evento {
+  max-width: 390px;
+  min-width: 300px;
+  width: 390px;
+  height: auto;
+  background-color: #F9DEDC;
+  border-radius: 10px;
+}
+body main .eventos_especiales .content_evento .descrip_evento .descripcion {
+  text-align: center;
+  font-size: 25px;
+  padding: 20px;
 }
 body main .galeria_img {
   margin: auto 30px;
@@ -571,12 +590,12 @@ body main .registro_usuario .registro form .btn_registro button {
 }
 .container_carrito .content_carrito .head_cart button {
   position: absolute;
-  right: 0;
-  width: 20px;
-  font-size: 18px;
+  right: 10px;
+  width: 30px;
+  font-size: 25px;
   font-weight: 600;
   border: none;
-  border-radius: 10px;
+  border-radius: 50%;
   cursor: pointer;
 }
 .container_carrito .content_carrito .carrito {
@@ -763,13 +782,17 @@ a {
 }
 
 .toastify .toastify-close-button {
-  color: black; /* Color del icono de cierre */
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo del botón de cierre */
-  border-radius: 50%; /* Hacer el botón redondo */
+  color: black;
+  /* Color del icono de cierre */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Fondo del botón de cierre */
+  border-radius: 50%;
+  /* Hacer el botón redondo */
 }
 
 .toastify .toastify-close-button:hover {
-  background-color: rgba(0, 0, 0, 0.7); /* Fondo del botón de cierre al pasar el ratón */
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Fondo del botón de cierre al pasar el ratón */
 }
 
 @media only screen and (min-width: 730px) {
@@ -785,6 +808,10 @@ a {
     left: 45px;
     top: 70px;
   }
+  html header .content_header .car i {
+    width: 100%;
+    height: 100%;
+  }
   html header .content_header .logo #logo_header {
     width: 280px;
     height: 200px;
@@ -796,13 +823,11 @@ a {
     position: relative;
     top: 85px;
     width: 700px;
-    margin: auto;
   }
   html header nav {
     position: relative;
     height: auto;
     bottom: 25px;
-    margin-top: 0;
   }
   html header nav ul li {
     width: auto;
@@ -810,7 +835,7 @@ a {
   }
   html header .ingreso_registro {
     position: relative;
-    bottom: 190px;
+    bottom: 140px;
     right: 33px;
     justify-content: end;
   }
@@ -837,9 +862,6 @@ a {
     gap: 5px;
     z-index: 1;
   }
-  html header .redes_sociales:hover {
-    margin-right: 4px;
-  }
   html header .redes_sociales .fa-facebook,
   html header .redes_sociales .fa-instagram,
   html header .redes_sociales .fa-whatsapp {
@@ -859,7 +881,6 @@ a {
   }
   html body main .hero {
     max-width: none;
-    margin: auto 30px;
   }
   html body main .hero .text_hero {
     font-size: 45px;
@@ -868,8 +889,9 @@ a {
     padding: 10px 20px;
     font-size: 22px;
   }
-  html body main .eventos_especiales .content_evento {
-    height: 450px;
+  html body main .eventos_especiales .content_evento .descrip_evento {
+    height: 280px;
+    padding: 40px 0;
   }
   .list_nav {
     flex-direction: row;

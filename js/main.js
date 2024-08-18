@@ -55,6 +55,33 @@ async function cargarCatalogo() {
 
 }
 
+async function cargarDestacados() {
+    let contentDestacados = document.querySelector(".content_productos")
+
+    if (contentDestacados != null) {
+        Base_de_datos = getBD()
+        let destacados = baseDatosEventos.destacados
+        if (destacados) {
+            destacados.forEach((e) => {
+                let producDestacado = document.createElement("div")
+                producDestacado.innerHTML = `
+                    <div class="producto">
+                        <div class="img_producto">
+                            <img src=${e.img} alt="">
+                        </div>
+                        <div class="info_producto">
+                            <p class="nombre">${e.nombre}</p>
+                            <p class="precio">${e.precio}</p>
+                        </div>
+                    </div>
+                `
+                contentDestacados.appendChild(producDestacado)
+            })
+        }
+    }
+
+}
+
 
 // base Datos eventos
 let turno = 0;
@@ -64,13 +91,24 @@ const cargarEvento = () => {
     baseDatosEventos = getBD()
     let img = document.querySelector(".img_src");
     let nombre = document.querySelector(".nombre_evento")
+    let descrip = document.querySelector(".descripcion")
+    let btn_wht = document.querySelector(".link_whatsapp")
 
     if (img != null && nombre != null) {
+
         let evento = baseDatosEventos.eventos[turno]
         img.src = evento.img;
         nombre.textContent = evento.nombre
+        descrip.textContent = evento.descripcion
+        btn_wht.href = evento.WhatsApp
+
     }
 }
+
+setInterval(() => {
+    siguiente()
+}, 4000);
+
 // Siguiente evento
 let siguiente = () => {
     turno++
@@ -92,6 +130,7 @@ const cargarDatos = () => {
     setBD(url).then(() => {
         cargarCatalogo();
         cargarEvento();
+        cargarDestacados();
     })
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -265,7 +304,7 @@ class Usuario {
                 <div class="img">
                     <i class="fa-solid fa-user"></i>
                 </div>
-                <p class="nombre">${this.nombre} ${this.apellido}</p>
+                <p class="nombre">${this.nombre}</p>
             </div>
         `
         }
@@ -567,9 +606,9 @@ let alertNuevoProducto = () => {
             color: "black",
             borderRadius: "10px",
         },
-        onClick: function(){
+        onClick: function () {
             toggleCarrito()
-            
+
         }
     }).showToast();
 }
