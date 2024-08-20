@@ -20,22 +20,28 @@ function getBD() {
 }
 
 
-let filtroProd
-const filtrarProductos = (palabra) => {
+let filtro
+const buscadorCatalogo = () => {
     datos = getBD()
-    console.log(palabra);
-
-
-    filtroProd = datos.producto.filter(e => e.nombre.includes(palabra))
+    let palabra = document.querySelector("#buscador").value
+    filtro = datos.producto.filter(producto => producto.nombre.includes(palabra))
     cargarCatalogo()
 }
 
-const buscadorCatalogo = () => {
-    let palabra = document.querySelector("#buscador").value
-    filtrarProductos(palabra)
+const filtroPrecio = ()=>{
+    datos = getBD()
+    let precio = document.querySelector("#precio").value
+    filtro = datos.producto.filter(producto => producto.precio < precio)
+    cargarCatalogo()
+}
+const filtroCategoria = ()=>{
+    datos = getBD()
+    let categoria = document.querySelector("")
 }
 
+// categorias 
 
+let selecCategoria = document.querySelector("#selectCategorias")
 
 // funcion cargarcatalogo 
 async function cargarCatalogo() {
@@ -43,7 +49,7 @@ async function cargarCatalogo() {
         content_productos.innerHTML= ""
     if (content_productos != null) {
         datos = getBD()
-        let catalogo = filtroProd || datos.producto
+        let catalogo = filtro || datos.producto
         if (catalogo) {
             catalogo.forEach((e) => {
                 let producto = document.createElement("a")

@@ -70,18 +70,18 @@
             </div>
             <div class="buscador">
                 <div class="box_buscador">
-                    <input id="buscador" type="text"> 
-                    <i class="fa-solid fa-magnifying-glass" onclick="buscadorCatalogo()"></i>
+                    <input id="buscador" onchange="buscadorCatalogo()" type="text"> 
+                    <i class="fa-solid fa-magnifying-glass"  onclick="buscadorCatalogo()"></i>
                 </div>
                 <div class="box_filter">
                     <div class="categoria">
                         <label for="categoria">Categoria</label>
-                        <select name="categorias" id="categorias">
+                        <select name="categorias" id="selectCategorias">
                         </select>
                     </div>
                     <div class="precio">
                         <label for="precio">Precio</label>
-                        <input type="number">
+                        <input type="number" id="precio" onchange="filtroPrecio()">
                     </div>
                 </div>
             </div>
