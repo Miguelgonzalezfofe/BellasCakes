@@ -546,6 +546,7 @@ class ControladorCarrito {
 
 // Funcion para actualizar la vista del carrito en el DOM
 function actualizarVistaCarrito(carrito) {
+
     const carritoElemento = document.getElementById("carrito")
     if (carritoElemento) {
         carritoElemento.innerHTML = "";
@@ -581,16 +582,16 @@ function actualizarVistaCarrito(carrito) {
             carritoElemento.appendChild(productoElemento);
         })
 
-
-
         const totalElemento = document.getElementById("totalCarrito")
         totalElemento.textContent = `Total: $${carrito.obtenerTotal()}`;
 
         obtenerBtnEliminar()
         obtenerBtnSumar()
-
-
+        actualizarCantidadCar(carrito)
     }
+
+    let cantiadad = document.querySelector(".numeroDeProductos")
+
 }
 /* NOTIFICACION AL AGREGAR UN PRODUCTO AL CARRO */
 let alertNuevoProducto = () => {
@@ -711,6 +712,10 @@ const obtenerBtnEliminar = () => {
             controladorCarrito.quitarPorductoDelCarrito(usuario.carrito.productos[i].id)
         })
     }
+}
+const actualizarCantidadCar = (carrito)=>{
+    let cantiadad = document.querySelector(".numeroDeProductos")
+        cantiadad.textContent = carrito.productos.length
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+ */

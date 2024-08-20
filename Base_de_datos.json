@@ -380,20 +380,20 @@
     "eventos": [
         {
             "nombre": "Boda",
-            "img": "../media/img/Combo_mesa_dulce_mixto(pequeño).jpg",
+            "img": "../media/img/img_boda.jpg",
             "descripcion": "Nos especializamos en crear postres y dulces únicos para bodas. Cada bocado está diseñado para deleitar a tus invitados y complementar la belleza de tu día especial.",
             "WhatsApp":"https://api.whatsapp.com/send?phone=+5491163716963&text=Hola,%20quiero%20consultar%20por%20los%20eventos%20para%20bodas."
         },
         {
             "nombre": "Bautizos",
-            "img": "../media/img/IMG-20240603-WA0019-min.jpg",
+            "img": "../media/img/img_bautizo.jpg",
             "descripcion": "endulzamos los bautizos con postres y dulces que capturan la ternura del momento para hacer que el bautizo de tu pequeño sea un evento lleno de sabor y recuerdos felices.",
             "WhatsApp":"https://api.whatsapp.com/send?phone=+5491163716963&text=Hola,%20quiero%20consultar%20por%20los%20eventos%20para%20bautizos."
 
         },
         {
             "nombre": "Cumpleaños",
-            "img": "../media/img/IMG-20240603-WA0004-min.jpg",
+            "img": "../media/img/img_cumpleaños.jpg",
             "descripcion": "transformamos tus cumpleaños en celebraciones dulces e inolvidables con nuestros exclusivos postres y dulces diseñados para sorprender y deleitar a tus invitados",
             "WhatsApp":"https://api.whatsapp.com/send?phone=+5491163716963&text=Hola,%20quiero%20consultar%20por%20los%20eventos%20para%20cumpleaños."
 
