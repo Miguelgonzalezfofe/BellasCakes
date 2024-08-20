@@ -23,9 +23,12 @@
         <div class="content_header ">
             <div class="car">
                 <i class="fa-solid fa-cart-shopping" onclick="toggleCarrito()"></i>
+                <span class="numeroDeProductos">0</span>
             </div>
             <div class="logo center">
-                <img id="logo_header" src="../media/img/logo.jpg" alt="Logo Bellas Cakes">
+                <a href="../index.html">
+                    <img id="logo_header" src="../media/img/logo.jpg" alt="Logo Bellas Cakes">
+                </a>
             </div>
             <div class="menu">
                 <i class="fa-solid fa-bars" onclick="toogleHeader()"></i>
@@ -49,13 +52,18 @@
             </div>
         </div>
         <div class="redes_sociales">
-            <a href="https://www.facebook.com/p/Bellas-Cakes-100083466205792/?_rdr"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://www.instagram.com/bellascakespasteleria/"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://api.whatsapp.com/send?phone=+5491163716963&text=Hola%20me%20gustaría%20saber%20más%20sobre%20tus%20productos" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+            <a rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/p/Bellas-Cakes-100083466205792/?_rdr"><i
+                    class="fa-brands fa-facebook"></i></a>
+            <a rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/bellascakespasteleria/"><i
+                    class="fa-brands fa-instagram"></i></a>
+            <a rel="noopener noreferrer" target="_blank" href="https://api.whatsapp.com/send?phone=+5491163716963&text=Hola%20me%20gustaría%20saber%20más%20sobre%20tus%20productos"
+                ><i class="fa-brands fa-whatsapp"></i></a>
         </div>
     </header>
 
     <main>
+        <div class="container_usuario">
+        </div>
         <section class="ingreso_usuario">
             <h3 class="title_section ">Ingreso usuario</h3>
             <article class="ingreso">
@@ -85,11 +93,11 @@
         </div>
         <nav class="nav_footer">
             <ul class="list_nav">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Contacto</a></li>
-                <li><a href="#">Catálogo</a></li>
-                <li><a href="#">Preguntas Frecuentes</a></li>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../paginas/nosotros.html">Nosotros</a></li>
+                <li><a href="../paginas/contacto.html">Contacto</a></li>
+                <li><a href="../paginas/catalogo.html">Catálogo</a></li>
+                <li><a href="../paginas/preguntas_frecuentes.html">Preguntas Frecuentes</a></li>
             </ul>
         </nav>
         <div class="contacto_footer">
@@ -99,8 +107,12 @@
                 <p>Teléfono: --</p>
                 <p>Correo -- </p>
             </div>
-            <div class="ubicacion_footer">
-                <!-- ubicacion_footer -->
+            <div class="ubicacion_footer center">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13137.40052272639!2d-58.543449569849216!3d-34.59530681098995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb7c12be7a9b1%3A0xc8e5fb0e35939a5c!2sC.%20M.%20Cuenca%20195%2C%20B1672%20Villa%20Lynch%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1723943411593!5m2!1ses-419!2sar"
+                    width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
         <div class="avisos_legales">

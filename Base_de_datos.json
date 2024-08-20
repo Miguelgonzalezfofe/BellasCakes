@@ -6,7 +6,7 @@
             "precio": "122900",
             "categoria": "Mesa Dulce",
             "descripcion": "torta de tamaño mediano",
-            "img":"media/img/Combo_kids(mediano)img2.jpg"
+            "img": "media/img/Combo_kids(mediano)img2.jpg"
         },
         {
             "id": 2,
@@ -16,7 +16,7 @@
             "descripcion": "torta de tamaño pequeña",
             "img": "media/img/Combo_kids(pequeño).jpg"
         },
-        {   
+        {
             "id": 3,
             "nombre": "Combo Adultos(Pequeños)",
             "precio": "104900",
@@ -24,7 +24,7 @@
             "descripcion": "torta de tamaño pequeña para adultos",
             "img": "media/img/Combo_mesa_dulce_adultos(pequeño).jpg"
         },
-        {   
+        {
             "id": 4,
             "nombre": "Combo Adultos(Medianos)",
             "precio": "165900",
@@ -377,42 +377,60 @@
             "img": ""
         }
     ],
-    "eventos":[
+    "eventos": [
         {
             "nombre": "Boda",
-            "img": "../media/img/Combo_mesa_dulce_mixto(pequeño).jpg"
+            "img": "../media/img/img_boda.jpg",
+            "descripcion": "Nos especializamos en crear postres y dulces únicos para bodas. Cada bocado está diseñado para deleitar a tus invitados y complementar la belleza de tu día especial.",
+            "WhatsApp":"https://api.whatsapp.com/send?phone=+5491163716963&text=Hola,%20quiero%20consultar%20por%20los%20eventos%20para%20bodas."
         },
         {
             "nombre": "Bautizos",
-            "img": "../media/img/IMG-20240603-WA0019-min.jpg"
+            "img": "../media/img/img_bautizo.jpg",
+            "descripcion": "endulzamos los bautizos con postres y dulces que capturan la ternura del momento para hacer que el bautizo de tu pequeño sea un evento lleno de sabor y recuerdos felices.",
+            "WhatsApp":"https://api.whatsapp.com/send?phone=+5491163716963&text=Hola,%20quiero%20consultar%20por%20los%20eventos%20para%20bautizos."
+
         },
         {
             "nombre": "Cumpleaños",
-            "img": "../media/img/IMG-20240603-WA0004-min.jpg"
-        } 
+            "img": "../media/img/img_cumpleaños.jpg",
+            "descripcion": "transformamos tus cumpleaños en celebraciones dulces e inolvidables con nuestros exclusivos postres y dulces diseñados para sorprender y deleitar a tus invitados",
+            "WhatsApp":"https://api.whatsapp.com/send?phone=+5491163716963&text=Hola,%20quiero%20consultar%20por%20los%20eventos%20para%20cumpleaños."
+
+        }
     ],
-    "CombosShot":[
+    "destacados": [
         {
-            "id":1,
-            "cantidad": "por 12 unidades ",
-            "precio": "15000"
+            "id": 7,
+            "nombre": "ButterCream Cakes",
+            "precio": "40000",
+            "categoria": "Tortas Principales",
+            "descripcion": "Torta de especialidad",
+            "img": "media/img/Buttercream_cakes.jpg"
         },
         {
-            "id":2,
-            "cantidad": "por 24 unidades ",
-            "precio": "28800"
-
+            "id": 8,
+            "nombre": "Wedding Cake",
+            "precio": "45000",
+            "categoria": "Tortas Principales",
+            "descripcion": "Tortas de especialidad",
+            "img": "media/img/wedding_cake.jpg"
         },
         {
-            "id":3,
-            "cantidad": "por 36 unidades ",
-            "precio": "43200"
-
+            "id": 9,
+            "nombre": "torta Corazón",
+            "precio": "60000",
+            "categoria": "Tortas Principales",
+            "descripcion": "Torta con forma de corazón",
+            "img": "media/img/tortaCorazon.jpg"
         },
         {
-            "id":4,
-            "cantidad": "por 48 unidades ",
-            "precio": "56200"
+            "id": 10,
+            "nombre": "Clásicas - Cobertura Chantilly",
+            "precio": "50000",
+            "categoria": "Tortas Principales",
+            "descripcion": "Torta con cubertura",
+            "img": "media/img/clasica_chantilly.jpg"
         }
     ]
 }

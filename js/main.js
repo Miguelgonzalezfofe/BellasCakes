@@ -20,20 +20,39 @@ function getBD() {
 }
 
 
+let filtro
+const buscadorCatalogo = () => {
+    datos = getBD()
+    let palabra = document.querySelector("#buscador").value
+    filtro = datos.producto.filter(producto => producto.nombre.includes(palabra))
+    cargarCatalogo()
+}
+
+const filtroPrecio = ()=>{
+    datos = getBD()
+    let precio = document.querySelector("#precio").value
+    filtro = datos.producto.filter(producto => producto.precio < precio)
+    cargarCatalogo()
+}
+const filtroCategoria = ()=>{
+    datos = getBD()
+    let categoria = document.querySelector("")
+}
+
+// categorias 
+
+let selecCategoria = document.querySelector("#selectCategorias")
+
 // funcion cargarcatalogo 
 async function cargarCatalogo() {
     let content_productos = document.querySelector("#content_productos")
-
+        content_productos.innerHTML= ""
     if (content_productos != null) {
-
-        let catalogo = getBD()
-
-
+        datos = getBD()
+        let catalogo = filtro || datos.producto
         if (catalogo) {
-            catalogo.producto.forEach((e) => {
-
+            catalogo.forEach((e) => {
                 let producto = document.createElement("a")
-
                 producto.innerHTML = `
                         <div class="producto">
                             <div class="img_producto">
@@ -48,9 +67,36 @@ async function cargarCatalogo() {
                 `
                 content_productos.appendChild(producto)
             })
-            agregarBtnProductos()
         }
+        
+        agregarBtnProductos(catalogo)
+    }
+    
+}
 
+async function cargarDestacados() {
+    let contentDestacados = document.querySelector("#destacados")
+
+    if (contentDestacados != null) {
+        Base_de_datos = getBD()
+        let destacados = baseDatosEventos.destacados
+        if (destacados) {
+            destacados.forEach((e) => {
+                let producDestacado = document.createElement("div")
+                producDestacado.innerHTML = `
+                    <div class="producto">
+                        <div class="img_producto">
+                            <img src=${e.img} alt="">
+                        </div>
+                        <div class="info_producto">
+                            <p class="nombre">${e.nombre}</p>
+                            <p class="precio">${e.precio}</p>
+                        </div>
+                    </div>
+                `
+                contentDestacados.appendChild(producDestacado)
+            })
+        }
     }
 
 }
@@ -64,13 +110,24 @@ const cargarEvento = () => {
     baseDatosEventos = getBD()
     let img = document.querySelector(".img_src");
     let nombre = document.querySelector(".nombre_evento")
+    let descrip = document.querySelector(".descripcion")
+    let btn_wht = document.querySelector(".link_whatsapp")
 
     if (img != null && nombre != null) {
+
         let evento = baseDatosEventos.eventos[turno]
         img.src = evento.img;
         nombre.textContent = evento.nombre
+        descrip.textContent = evento.descripcion
+        btn_wht.href = evento.WhatsApp
+
     }
 }
+
+setInterval(() => {
+    siguiente()
+}, 4000);
+
 // Siguiente evento
 let siguiente = () => {
     turno++
@@ -92,6 +149,7 @@ const cargarDatos = () => {
     setBD(url).then(() => {
         cargarCatalogo();
         cargarEvento();
+        cargarDestacados();
     })
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -265,7 +323,7 @@ class Usuario {
                 <div class="img">
                     <i class="fa-solid fa-user"></i>
                 </div>
-                <p class="nombre">${this.nombre} ${this.apellido}</p>
+                <p class="nombre">${this.nombre}</p>
             </div>
         `
         }
@@ -507,6 +565,7 @@ class ControladorCarrito {
 
 // Funcion para actualizar la vista del carrito en el DOM
 function actualizarVistaCarrito(carrito) {
+
     const carritoElemento = document.getElementById("carrito")
     if (carritoElemento) {
         carritoElemento.innerHTML = "";
@@ -542,16 +601,16 @@ function actualizarVistaCarrito(carrito) {
             carritoElemento.appendChild(productoElemento);
         })
 
-
-
         const totalElemento = document.getElementById("totalCarrito")
         totalElemento.textContent = `Total: $${carrito.obtenerTotal()}`;
 
         obtenerBtnEliminar()
         obtenerBtnSumar()
-
-
+        actualizarCantidadCar(carrito)
     }
+
+    let cantiadad = document.querySelector(".numeroDeProductos")
+
 }
 /* NOTIFICACION AL AGREGAR UN PRODUCTO AL CARRO */
 let alertNuevoProducto = () => {
@@ -567,9 +626,9 @@ let alertNuevoProducto = () => {
             color: "black",
             borderRadius: "10px",
         },
-        onClick: function(){
+        onClick: function () {
             toggleCarrito()
-            
+
         }
     }).showToast();
 }
@@ -639,10 +698,10 @@ usuario = Usuario.cargarSesion()
 let controladorCarrito = new ControladorCarrito(usuario)
 
 
-const agregarBtnProductos = () => {
-    let productosDisponibles = getBD()
-
-    productosDisponibles.producto.forEach(prodc => {
+const agregarBtnProductos = (catalogo) => {
+    console.log(catalogo);
+    
+    catalogo.forEach(prodc => {
 
         let botonAgregar = document.querySelector(`#agregarProducto${prodc.id}`)
 
@@ -672,6 +731,10 @@ const obtenerBtnEliminar = () => {
             controladorCarrito.quitarPorductoDelCarrito(usuario.carrito.productos[i].id)
         })
     }
+}
+const actualizarCantidadCar = (carrito) => {
+    let cantiadad = document.querySelector(".numeroDeProductos")
+    cantiadad.textContent = carrito.productos.length
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+ */
