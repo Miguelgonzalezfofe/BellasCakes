@@ -20,20 +20,33 @@ function getBD() {
 }
 
 
+let filtroProd
+const filtrarProductos = (palabra) => {
+    datos = getBD()
+    console.log(palabra);
+
+
+    filtroProd = datos.producto.filter(e => e.nombre.includes(palabra))
+    cargarCatalogo()
+}
+
+const buscadorCatalogo = () => {
+    let palabra = document.querySelector("#buscador").value
+    filtrarProductos(palabra)
+}
+
+
+
 // funcion cargarcatalogo 
 async function cargarCatalogo() {
     let content_productos = document.querySelector("#content_productos")
-
+        content_productos.innerHTML= ""
     if (content_productos != null) {
-
-        let catalogo = getBD()
-
-
+        datos = getBD()
+        let catalogo = filtroProd || datos.producto
         if (catalogo) {
-            catalogo.producto.forEach((e) => {
-
+            catalogo.forEach((e) => {
                 let producto = document.createElement("a")
-
                 producto.innerHTML = `
                         <div class="producto">
                             <div class="img_producto">
@@ -48,15 +61,15 @@ async function cargarCatalogo() {
                 `
                 content_productos.appendChild(producto)
             })
-            agregarBtnProductos()
         }
-
+        
+        agregarBtnProductos(catalogo)
     }
-
+    
 }
 
 async function cargarDestacados() {
-    let contentDestacados = document.querySelector(".content_productos")
+    let contentDestacados = document.querySelector("#destacados")
 
     if (contentDestacados != null) {
         Base_de_datos = getBD()
@@ -679,10 +692,10 @@ usuario = Usuario.cargarSesion()
 let controladorCarrito = new ControladorCarrito(usuario)
 
 
-const agregarBtnProductos = () => {
-    let productosDisponibles = getBD()
-
-    productosDisponibles.producto.forEach(prodc => {
+const agregarBtnProductos = (catalogo) => {
+    console.log(catalogo);
+    
+    catalogo.forEach(prodc => {
 
         let botonAgregar = document.querySelector(`#agregarProducto${prodc.id}`)
 
@@ -713,9 +726,9 @@ const obtenerBtnEliminar = () => {
         })
     }
 }
-const actualizarCantidadCar = (carrito)=>{
+const actualizarCantidadCar = (carrito) => {
     let cantiadad = document.querySelector(".numeroDeProductos")
-        cantiadad.textContent = carrito.productos.length
+    cantiadad.textContent = carrito.productos.length
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+ */

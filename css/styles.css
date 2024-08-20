@@ -365,7 +365,7 @@ body main .buscador .box_buscador {
   justify-content: stretch;
 }
 body main .buscador .box_buscador #buscador {
-  width: 90%;
+  width: 95%;
   height: 100%;
   border-radius: 20px 0 0 20px;
   border: none;
@@ -374,6 +374,9 @@ body main .buscador .box_buscador #buscador {
 body main .buscador .box_buscador i {
   display: inline-block;
   font-size: 23px;
+  cursor: pointer;
+  border: 1px solid;
+  padding: 4px;
 }
 body main .buscador .box_filter {
   display: flex;
